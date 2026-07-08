@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Common Cat Diseases Explained | Cat&Me</title>
+<meta name="description" content="A plain-English guide to the health problems cats face most often — dental disease, kidney disease, hyperthyroidism, diabetes, cat flu, urinary disease, FIV, FeLV and parasites — with symptoms, treatment and prevention.">
+<style>
+:root{--ink:#24211f;--muted:#6f6760;--paper:#fffaf4;--cream:#f5eadc;--orange:#d77a35;--teal:#3f918b;--line:#eadccb;--card:#fff;--dark:#243b39;--red:#c9503f;--redsoft:#fbe9e6;--amber:#b57d1f;--ambersoft:#fbf1da}
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--paper);color:var(--ink);line-height:1.6}
+a{text-decoration:none;color:inherit}
+/* ===== Shared header (matches homepage) ===== */
+.topbar{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:5}
+.nav{max-width:1180px;margin:auto;padding:14px 26px;display:flex;align-items:center;justify-content:space-between;gap:22px}
+.brand{font-size:28px;font-weight:900;color:var(--orange);letter-spacing:-.5px}
+.navlinks{display:flex;gap:22px;font-size:15px;color:var(--muted)}
+.navlinks a:hover{color:var(--orange)}
+.social{display:flex;gap:9px}
+.social a{width:38px;height:38px;border:1px solid var(--line);border-radius:50%;display:grid;place-items:center;background:#fff;color:var(--teal);font-weight:800}
+.social a:hover{background:#fff3e8;color:var(--orange)}
+/* ===== Breadcrumb ===== */
+.crumbs{max-width:1180px;margin:auto;padding:18px 26px 0;font-size:13px;color:var(--muted)}
+.crumbs a:hover{color:var(--orange)}
+.crumbs span{color:var(--ink);font-weight:700}
+/* ===== Article header ===== */
+.article-head{max-width:1180px;margin:auto;padding:16px 26px 8px}
+.tagline{color:var(--teal);font-weight:900;text-transform:uppercase;letter-spacing:.12em;font-size:12px}
+.article-head h1{font-size:46px;line-height:1.06;letter-spacing:-1.2px;margin:12px 0 14px;max-width:900px}
+.standfirst{font-size:20px;color:var(--muted);max-width:820px;margin:0}
+.meta{display:flex;flex-wrap:wrap;gap:22px;margin:22px 0 0;padding:16px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);font-size:14px;color:var(--muted)}
+.meta b{color:var(--ink)}
+.hero-img{max-width:1180px;margin:26px auto 0;padding:0 26px}
+.hero-img img{width:100%;height:440px;object-fit:cover;border-radius:24px;border:8px solid #fff;box-shadow:0 16px 40px rgba(78,55,29,.16)}
+.hero-img figcaption{color:var(--muted);font-size:13px;margin-top:10px;text-align:center}
+/* ===== Layout: content + sidebar ===== */
+.layout{max-width:1180px;margin:34px auto 0;padding:0 26px;display:grid;grid-template-columns:1fr 300px;gap:48px;align-items:start}
+.content{max-width:760px}
+.content h2{font-size:29px;letter-spacing:-.4px;margin:40px 0 6px;scroll-margin-top:90px}
+.content h2 .num{color:var(--orange);font-weight:900;margin-right:10px}
+.content h3{font-size:20px;margin:26px 0 4px}
+.content p{font-size:17px;margin:14px 0}
+.content ul,.content ol{padding-left:22px;margin:12px 0}
+.content li{margin:8px 0;font-size:17px}
+.lead-para{font-size:19px;color:#403a34}
+.divider{height:1px;background:var(--line);border:0;margin:38px 0}
+.tag-row{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 0}
+.tag{font-size:12px;font-weight:800;padding:5px 10px;border-radius:99px;background:#e7f4f2;color:var(--teal)}
+.tag.chronic{background:var(--ambersoft);color:var(--amber)}
+.tag.infectious{background:var(--redsoft);color:var(--red)}
+/* Callouts */
+.callout{border-radius:16px;padding:18px 20px;margin:22px 0;border:1px solid var(--line);background:var(--cream)}
+.callout .c-title{font-weight:800;margin:0 0 6px;display:flex;align-items:center;gap:8px}
+.callout p{margin:6px 0 0;font-size:16px}
+.callout.warn{background:var(--redsoft);border-color:#f2c9c2}
+.callout.warn .c-title{color:var(--red)}
+.callout.tip{background:#e7f4f2;border-color:#c7e6e1}
+.callout.tip .c-title{color:var(--teal)}
+.callout.note{background:var(--ambersoft);border-color:#eaddb4}
+.callout.note .c-title{color:var(--amber)}
+/* disease block */
+.disease{border:1px solid var(--line);border-radius:18px;padding:4px 22px 20px;margin:22px 0;background:#fff}
+.disease h3{font-size:21px}
+.sym{font-size:15px;margin:10px 0 0}
+.sym b{color:var(--ink)}
+/* Emergency box */
+.emergency{background:var(--dark);color:#fff;border-radius:20px;padding:26px 28px;margin:30px 0}
+.emergency h3{color:#fff;margin:0 0 10px;font-size:22px}
+.emergency ul{columns:2;column-gap:28px}
+.emergency li{color:rgba(255,255,255,.9);font-size:15px}
+.emergency p{color:rgba(255,255,255,.75);font-size:14px;margin:12px 0 0}
+@media(max-width:620px){.emergency ul{columns:1}}
+/* table */
+table.symptoms{width:100%;border-collapse:collapse;margin:18px 0;font-size:15px}
+table.symptoms th,table.symptoms td{border:1px solid var(--line);padding:11px 13px;text-align:left;vertical-align:top}
+table.symptoms th{background:#fffaf3;font-size:13px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted)}
+/* ===== Sidebar ===== */
+.sidebar{position:sticky;top:86px;display:flex;flex-direction:column;gap:20px}
+.toc{background:#fff;border:1px solid var(--line);border-radius:18px;padding:20px}
+.toc h4{margin:0 0 12px;font-size:13px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+.toc ol{margin:0;padding-left:20px}
+.toc li{margin:7px 0;font-size:14px}
+.toc a:hover{color:var(--orange)}
+.share-card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:20px}
+.share-card h4{margin:0 0 12px;font-size:13px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+.share-row{display:flex;gap:9px;flex-wrap:wrap}
+.share-row a{padding:8px 12px;border:1px solid var(--line);border-radius:10px;font-size:13px;font-weight:700;color:var(--teal)}
+.share-row a:hover{background:#fff3e8;color:var(--orange)}
+.mini-cta{background:linear-gradient(135deg,#fff7eb,#ecf7f5);border:1px solid var(--line);border-radius:18px;padding:20px}
+.mini-cta strong{display:block;font-size:17px;margin-bottom:6px}
+.mini-cta p{margin:0 0 12px;font-size:14px;color:var(--muted)}
+.mini-cta a{display:inline-block;background:var(--orange);color:#fff;font-weight:800;padding:10px 14px;border-radius:10px;font-size:14px}
+/* ===== Related ===== */
+.related{max-width:1180px;margin:20px auto 0;padding:0 26px}
+.related h2{font-size:28px;margin:40px 0 18px}
+.related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.rel-card{background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;transition:.2s}
+.rel-card:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(83,55,25,.08)}
+.rel-card img{width:100%;height:150px;object-fit:cover}
+.rel-card .rc-body{padding:16px}
+.rel-card h4{margin:0 0 6px;font-size:16px}
+.rel-card p{margin:0;font-size:13px;color:var(--muted)}
+/* ===== Footer ===== */
+.disclaimer{max-width:1180px;margin:34px auto 0;padding:0 26px}
+.disclaimer .box{background:#fffaf3;border:1px solid var(--line);border-radius:16px;padding:18px 20px;font-size:14px;color:var(--muted)}
+.follow{max-width:1180px;margin:30px auto 0;padding:0 26px}
+.follow .box{display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between;background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px 24px}
+.follow h4{margin:0;font-size:18px}
+.footer{padding:34px 28px;text-align:center;color:var(--muted);border-top:1px solid var(--line);background:#fff;margin-top:34px}
+@media(max-width:960px){.layout{grid-template-columns:1fr}.sidebar{position:static;order:-1}.related-grid{grid-template-columns:1fr}.hero-img img{height:320px}}
+@media(max-width:680px){.navlinks{display:none}.article-head h1{font-size:33px}.standfirst{font-size:18px}.content p,.content li{font-size:16px}}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <nav class="nav">
+    <a class="brand" href="cat_article_index.html">Cat&amp;Me</a>
+    <div class="navlinks">
+      <a href="cat_article_index.html#categories">Categories</a>
+      <a href="cat_article_index.html#health">Health</a>
+      <a href="cat_article_index.html#food">Food</a>
+      <a href="cat_article_index.html#az">A-Z</a>
+    </div>
+    <div class="social">
+      <a href="https://facebook.com/" target="_blank" aria-label="Facebook page">f</a>
+      <a href="https://youtube.com/" target="_blank" aria-label="YouTube channel">▶</a>
+      <a href="mailto:hello@catandme.com" aria-label="Email Cat and Me">@</a>
+      <a href="https://instagram.com/" target="_blank" aria-label="Instagram page">◎</a>
+    </div>
+  </nav>
+</header>
+
+<nav class="crumbs">
+  <a href="cat_article_index.html">Home</a> &nbsp;/&nbsp;
+  <a href="cat_article_index.html#health">Cat Health &amp; Wellness</a> &nbsp;/&nbsp;
+  <span>Common Cat Diseases Explained</span>
+</nav>
+
+<header class="article-head">
+  <div class="tagline">Cat Health &amp; Wellness</div>
+  <h1>Common Cat Diseases Explained</h1>
+  <p class="standfirst">A plain-English guide to the health problems cats face most often — what causes them, the signs to watch for, how vets treat them, and what you can do to lower the risk.</p>
+  <div class="meta">
+    <div>⏱️ <b>11 min</b> read</div>
+    <div>Updated <b>7 July 2026</b></div>
+    <div>First published <b>3 July 2026</b></div>
+    <div>Reviewed for <b>Cat&amp;Me Health</b></div>
+  </div>
+</header>
+
+<figure class="hero-img">
+  <img src="https://images.unsplash.com/photo-1592194996308-7b43878e84a6?auto=format&fit=crop&w=1400&q=85" alt="A calm cat resting, representing common health conditions in cats">
+  <figcaption>Many common cat diseases develop slowly — knowing the early signs helps you catch them before they become serious.</figcaption>
+</figure>
+
+<div class="layout">
+  <article class="content">
+    <p class="lead-para">Cats are famously stoic. They tend to hide illness by instinct, which means the problems on this page often creep up gradually before an owner notices anything is wrong. The aim here isn’t to turn you into a vet — it’s to help you recognise the <strong>most common conditions</strong>, know which signs matter, and understand what treatment usually looks like.</p>
+    <p>We’ve grouped the diseases into three broad types: <strong>long-term (chronic) conditions</strong> that mostly affect older cats, <strong>infectious diseases</strong> spread between cats, and <strong>everyday problems</strong> like dental disease, obesity and parasites. None of this replaces a proper diagnosis — if your cat seems unwell, always call your vet.</p>
+
+    <div class="callout note">
+      <p class="c-title">💡 One theme runs through all of these</p>
+      <p>Early detection changes outcomes. Yearly check-ups for adult cats — and twice-yearly for seniors — catch many of these conditions before they become serious or costly.</p>
+    </div>
+
+    <hr class="divider">
+
+    <h2 id="chronic">Long-term (chronic) conditions</h2>
+    <p>These tend to appear in middle-aged and older cats and are managed over months or years rather than cured.</p>
+
+    <div class="disease">
+      <h3>Chronic kidney disease (CKD)</h3>
+      <div class="tag-row"><span class="tag chronic">Chronic</span><span class="tag">Common in seniors</span></div>
+      <p>One of the most common diseases in older cats. The kidneys gradually lose their ability to filter waste and concentrate urine.</p>
+      <p class="sym"><b>Watch for:</b> drinking and urinating more, weight loss, reduced appetite, lethargy and vomiting.</p>
+      <p class="sym"><b>Treatment:</b> not curable, but a special kidney diet, good hydration, and medication can keep cats comfortable and slow the decline. Early diagnosis makes a big difference.</p>
+    </div>
+
+    <div class="disease">
+      <h3>Hyperthyroidism</h3>
+      <div class="tag-row"><span class="tag chronic">Chronic</span><span class="tag">Middle-aged &amp; older</span></div>
+      <p>An overactive thyroid gland produces too much thyroid hormone, speeding up the metabolism. Usually caused by a benign (non-cancerous) swelling.</p>
+      <p class="sym"><b>Watch for:</b> weight loss despite a big appetite, increased thirst, restlessness or hyperactivity, a fast heart rate, and an unkempt or greasy coat.</p>
+      <p class="sym"><b>Treatment:</b> daily medication, a special diet, surgery, or radioactive iodine therapy — which can be curative. Left untreated it can harm the heart and other organs.</p>
+    </div>
+
+    <div class="disease">
+      <h3>Diabetes mellitus</h3>
+      <div class="tag-row"><span class="tag chronic">Chronic</span><span class="tag">Linked to weight</span></div>
+      <p>The body can’t produce or respond to insulin properly, so blood sugar rises. More common in overweight and middle-aged cats.</p>
+      <p class="sym"><b>Watch for:</b> drinking a lot more, urinating more, increased appetite paired with weight loss, and lethargy.</p>
+      <p class="sym"><b>Treatment:</b> often managed well with insulin and diet. Caught early, some cats even go into remission. Weight control is the best prevention.</p>
+    </div>
+
+    <div class="disease">
+      <h3>Arthritis</h3>
+      <div class="tag-row"><span class="tag chronic">Chronic</span><span class="tag">Often missed</span></div>
+      <p>Very common in older cats and easily overlooked because cats hide pain and simply move less.</p>
+      <p class="sym"><b>Watch for:</b> reluctance to jump, hesitating on stairs, sleeping more, reduced grooming, and irritability when touched.</p>
+      <p class="sym"><b>Treatment:</b> pain relief prescribed by a vet, weight management, and easy-access ramps, steps and soft bedding.</p>
+    </div>
+
+    <hr class="divider">
+
+    <h2 id="infectious">Infectious diseases</h2>
+    <p>These spread between cats. Vaccination, keeping cats indoors, and reducing contact with unknown cats all lower the risk.</p>
+
+    <div class="disease">
+      <h3>Cat flu (upper respiratory infection)</h3>
+      <div class="tag-row"><span class="tag infectious">Infectious</span><span class="tag">Vaccine available</span></div>
+      <p>Usually caused by feline herpesvirus or calicivirus. Very contagious between cats, especially in multi-cat homes and shelters.</p>
+      <p class="sym"><b>Watch for:</b> sneezing, runny nose and eyes, discharge, mouth ulcers, reduced appetite and lethargy.</p>
+      <p class="sym"><b>Treatment:</b> supportive care (fluids, nursing, keeping the nose and eyes clean); antibiotics only for secondary infections. Vaccination reduces severity.</p>
+    </div>
+
+    <div class="disease">
+      <h3>Feline immunodeficiency virus (FIV)</h3>
+      <div class="tag-row"><span class="tag infectious">Infectious</span><span class="tag">Spread by bites</span></div>
+      <p>A slow-acting virus, mainly spread through bite wounds, that gradually weakens the immune system — similar in concept to HIV in humans, but not transmissible to people.</p>
+      <p class="sym"><b>Watch for:</b> often no signs for years, then recurrent infections, dental/gum disease, weight loss and poor coat.</p>
+      <p class="sym"><b>Treatment:</b> no cure, but many FIV-positive cats live long, comfortable lives with good care, a stress-free indoor home, and prompt treatment of infections.</p>
+    </div>
+
+    <div class="disease">
+      <h3>Feline leukaemia virus (FeLV)</h3>
+      <div class="tag-row"><span class="tag infectious">Infectious</span><span class="tag">Vaccine available</span></div>
+      <p>Spread through close contact, saliva and shared bowls. More serious than FIV, it can cause anaemia, immune suppression and cancer.</p>
+      <p class="sym"><b>Watch for:</b> persistent fever, weight loss, pale gums, poor coat and recurrent infections.</p>
+      <p class="sym"><b>Treatment:</b> no cure; care focuses on managing complications. Vaccination and keeping cats indoors are the best prevention.</p>
+    </div>
+
+    <hr class="divider">
+
+    <h2 id="everyday">Everyday problems</h2>
+    <p>These are extremely common and largely preventable with good routine care.</p>
+
+    <div class="disease">
+      <h3>Dental disease</h3>
+      <div class="tag-row"><span class="tag">Very common</span><span class="tag">Preventable</span></div>
+      <p>A huge proportion of adult cats have some dental disease — and it’s genuinely painful, even when cats keep eating.</p>
+      <p class="sym"><b>Watch for:</b> bad breath, drooling, red gums, pawing at the mouth, and difficulty eating.</p>
+      <p class="sym"><b>Treatment:</b> professional cleaning under anaesthetic, tooth removal if needed, and at-home dental care to prevent recurrence.</p>
+    </div>
+
+    <div class="disease">
+      <h3>Feline lower urinary tract disease (FLUTD)</h3>
+      <div class="tag-row"><span class="tag">Common</span><span class="tag infectious">Can be an emergency</span></div>
+      <p>An umbrella term for painful bladder and urinary conditions, often linked to stress, diet and hydration.</p>
+      <p class="sym"><b>Watch for:</b> straining in the litter tray, frequent small trips, blood in urine, crying, and urinating outside the tray.</p>
+      <p class="sym"><b>Treatment:</b> depends on the cause. A male cat straining but passing little or no urine may have a <strong>blockage — a life-threatening emergency</strong>. Seek a vet immediately.</p>
+    </div>
+
+    <div class="disease">
+      <h3>Obesity</h3>
+      <div class="tag-row"><span class="tag">Very common</span><span class="tag">Preventable</span></div>
+      <p>One of the most common and most preventable problems. Excess weight raises the risk of diabetes, arthritis and other diseases.</p>
+      <p class="sym"><b>Watch for:</b> loss of a visible waist, difficulty feeling the ribs, and reduced activity or grooming.</p>
+      <p class="sym"><b>Treatment:</b> a vet-guided feeding plan, measured portions, and more play and activity.</p>
+    </div>
+
+    <div class="disease">
+      <h3>Parasites (fleas &amp; worms)</h3>
+      <div class="tag-row"><span class="tag">Very common</span><span class="tag">Preventable</span></div>
+      <p>Fleas and intestinal worms (such as roundworm and tapeworm) affect cats of all ages. Many cats show no obvious signs.</p>
+      <p class="sym"><b>Watch for:</b> scratching, flea dirt in the coat, visible worms or segments near the tail, weight loss, a dull coat, and occasional vomiting or diarrhoea.</p>
+      <p class="sym"><b>Treatment:</b> routine vet-recommended flea and worming products used on a regular schedule.</p>
+    </div>
+
+    <hr class="divider">
+
+    <h2 id="quick">Quick reference</h2>
+    <table class="symptoms">
+      <thead><tr><th>Disease</th><th>Key early signs</th><th>Type</th></tr></thead>
+      <tbody>
+        <tr><td>Kidney disease</td><td>More drinking/urinating, weight loss</td><td>Chronic</td></tr>
+        <tr><td>Hyperthyroidism</td><td>Weight loss with big appetite</td><td>Chronic</td></tr>
+        <tr><td>Diabetes</td><td>Thirst, urination, weight loss</td><td>Chronic</td></tr>
+        <tr><td>Cat flu</td><td>Sneezing, runny eyes/nose</td><td>Infectious</td></tr>
+        <tr><td>FIV / FeLV</td><td>Recurrent infections, weight loss</td><td>Infectious</td></tr>
+        <tr><td>Dental disease</td><td>Bad breath, sore gums</td><td>Everyday</td></tr>
+        <tr><td>Urinary disease (FLUTD)</td><td>Straining, blood in urine</td><td>Everyday</td></tr>
+        <tr><td>Obesity</td><td>No waist, hard to feel ribs</td><td>Everyday</td></tr>
+      </tbody>
+    </table>
+
+    <div class="emergency">
+      <h3>🚨 Get to a vet straight away if you see</h3>
+      <ul>
+        <li>Straining to urinate with little/no result</li>
+        <li>Difficulty or open-mouth breathing</li>
+        <li>Collapse or unresponsiveness</li>
+        <li>Seizures</li>
+        <li>Pale, white or blue gums</li>
+        <li>Repeated vomiting or vomiting blood</li>
+      </ul>
+      <p>When in doubt, phone your vet or an emergency clinic and describe what you’re seeing.</p>
+    </div>
+
+    <h2 id="prevention">How to lower the risk</h2>
+    <p>You can’t prevent everything, but these habits make a real difference:</p>
+    <ol>
+      <li><strong>Routine vet check-ups</strong> — yearly for adults, twice a year for seniors.</li>
+      <li><strong>Keep vaccinations and parasite control up to date.</strong></li>
+      <li><strong>Feed a complete, balanced diet</strong> and keep your cat at a healthy weight.</li>
+      <li><strong>Encourage water intake</strong> and keep litter trays clean.</li>
+      <li><strong>Look after teeth</strong> with vet-advised dental care.</li>
+      <li><strong>Know your cat’s normal</strong> — weight, appetite and habits — so you spot changes early.</li>
+    </ol>
+
+    <div class="callout tip">
+      <p class="c-title">✓ The takeaway</p>
+      <p>Most common cat diseases are far easier to manage when caught early. You don’t need to memorise every condition — just watch for changes in drinking, eating, weight, litter tray habits and energy, and check in with your vet when something seems off.</p>
+    </div>
+  </article>
+
+  <aside class="sidebar">
+    <div class="toc">
+      <h4>In this article</h4>
+      <ol>
+        <li><a href="#chronic">Chronic conditions</a></li>
+        <li><a href="#infectious">Infectious diseases</a></li>
+        <li><a href="#everyday">Everyday problems</a></li>
+        <li><a href="#quick">Quick reference</a></li>
+        <li><a href="#prevention">Lowering the risk</a></li>
+      </ol>
+    </div>
+    <div class="share-card">
+      <h4>Share this article</h4>
+      <div class="share-row">
+        <a href="mailto:?subject=Common%20Cat%20Diseases%20Explained">Email</a>
+        <a href="https://www.facebook.com/sharer/sharer.php" target="_blank">Facebook</a>
+        <a href="https://api.whatsapp.com/send" target="_blank">WhatsApp</a>
+        <a href="https://www.linkedin.com/sharing/share-offsite/" target="_blank">LinkedIn</a>
+      </div>
+    </div>
+    <div class="mini-cta">
+      <strong>Not sure if it’s serious?</strong>
+      <p>Learn the warning signs that mean it’s time to call the vet.</p>
+      <a href="article-10-signs-cat-sick.html">Read: 10 signs your cat may be sick</a>
+    </div>
+  </aside>
+</div>
+
+<section class="related">
+  <h2>Keep reading</h2>
+  <div class="related-grid">
+    <a class="rel-card" href="article-10-signs-cat-sick.html">
+      <img src="https://images.unsplash.com/photo-1574144611937-0df059b5ef3e?auto=format&fit=crop&w=800&q=80" alt="Cat resting while watched for signs of illness">
+      <div class="rc-body"><h4>10 Signs Your Cat May Be Sick</h4><p>The subtle warning signs owners should never ignore.</p></div>
+    </a>
+    <a class="rel-card" href="cat_article_index.html#health">
+      <img src="https://images.unsplash.com/photo-1543852786-1cf6624b9987?auto=format&fit=crop&w=800&q=80" alt="Cat sitting indoors">
+      <div class="rc-body"><h4>Why Is My Cat Vomiting?</h4><p>When vomiting is harmless — and when it’s a warning sign.</p></div>
+    </a>
+    <a class="rel-card" href="cat_article_index.html#health">
+      <img src="https://images.unsplash.com/photo-1519052537078-e6302a4968d4?auto=format&fit=crop&w=800&q=80" alt="Older cat relaxing">
+      <div class="rc-body"><h4>Senior Cat Health Checklist</h4><p>Extra care that helps ageing cats stay comfortable.</p></div>
+    </a>
+  </div>
+</section>
+
+<section class="disclaimer">
+  <div class="box">ℹ️ <strong>Please note:</strong> This article is for general educational purposes only and does not replace professional veterinary advice. If you are worried about your cat’s health, always contact your vet or a local emergency clinic.</div>
+</section>
+
+<section class="follow">
+  <div class="box">
+    <h4>Follow Cat&amp;Me for more cat-care tips</h4>
+    <div class="social">
+      <a href="https://facebook.com/" target="_blank" aria-label="Facebook page">f</a>
+      <a href="https://youtube.com/" target="_blank" aria-label="YouTube channel">▶</a>
+      <a href="mailto:hello@catandme.com" aria-label="Email Cat and Me">@</a>
+      <a href="https://instagram.com/" target="_blank" aria-label="Instagram page">◎</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">© 2026 Cat&amp;Me. Educational cat-care content only — contact a qualified vet for medical concerns.</footer>
+</body>
+</html>

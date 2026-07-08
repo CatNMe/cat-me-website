@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Siamese Cat Facts | Cat&Me</title>
+<meta name="description" content="Siamese cat facts: one of the oldest and most recognisable breeds, known for striking blue eyes, colour-point coats, high intelligence and a famously vocal, social personality.">
+<style>
+:root{--ink:#24211f;--muted:#6f6760;--paper:#fffaf4;--cream:#f5eadc;--orange:#d77a35;--teal:#3f918b;--line:#eadccb;--card:#fff;--dark:#243b39;--red:#c9503f;--redsoft:#fbe9e6;--amber:#b57d1f;--ambersoft:#fbf1da}
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--paper);color:var(--ink);line-height:1.6}
+a{text-decoration:none;color:inherit}
+.topbar{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:5}
+.nav{max-width:1180px;margin:auto;padding:14px 26px;display:flex;align-items:center;justify-content:space-between;gap:22px}
+.brand{font-size:28px;font-weight:900;color:var(--orange);letter-spacing:-.5px}
+.navlinks{display:flex;gap:22px;font-size:15px;color:var(--muted)}
+.navlinks a:hover{color:var(--orange)}
+.social{display:flex;gap:9px}
+.social a{width:38px;height:38px;border:1px solid var(--line);border-radius:50%;display:grid;place-items:center;background:#fff;color:var(--teal);font-weight:800}
+.social a:hover{background:#fff3e8;color:var(--orange)}
+.crumbs{max-width:1180px;margin:auto;padding:18px 26px 0;font-size:13px;color:var(--muted)}
+.crumbs a:hover{color:var(--orange)}
+.crumbs span{color:var(--ink);font-weight:700}
+.article-head{max-width:1180px;margin:auto;padding:16px 26px 8px}
+.tagline{color:var(--teal);font-weight:900;text-transform:uppercase;letter-spacing:.12em;font-size:12px}
+.article-head h1{font-size:46px;line-height:1.06;letter-spacing:-1.2px;margin:12px 0 14px;max-width:900px}
+.standfirst{font-size:20px;color:var(--muted);max-width:820px;margin:0}
+.meta{display:flex;flex-wrap:wrap;gap:22px;margin:22px 0 0;padding:16px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);font-size:14px;color:var(--muted)}
+.meta b{color:var(--ink)}
+.hero-img{max-width:1180px;margin:26px auto 0;padding:0 26px}
+.hero-img img{width:100%;height:440px;object-fit:cover;border-radius:24px;border:8px solid #fff;box-shadow:0 16px 40px rgba(78,55,29,.16)}
+.hero-img figcaption{color:var(--muted);font-size:13px;margin-top:10px;text-align:center}
+.layout{max-width:1180px;margin:34px auto 0;padding:0 26px;display:grid;grid-template-columns:1fr 300px;gap:48px;align-items:start}
+.content{max-width:760px}
+.content h2{font-size:29px;letter-spacing:-.4px;margin:40px 0 6px;scroll-margin-top:90px}
+.content h3{font-size:20px;margin:26px 0 4px}
+.content p{font-size:17px;margin:14px 0}
+.content ul,.content ol{padding-left:22px;margin:12px 0}
+.content li{margin:8px 0;font-size:17px}
+.lead-para{font-size:19px;color:#403a34}
+.divider{height:1px;background:var(--line);border:0;margin:38px 0}
+.callout{border-radius:16px;padding:18px 20px;margin:22px 0;border:1px solid var(--line);background:var(--cream)}
+.callout .c-title{font-weight:800;margin:0 0 6px;display:flex;align-items:center;gap:8px}
+.callout p{margin:6px 0 0;font-size:16px}
+.callout.warn{background:var(--redsoft);border-color:#f2c9c2}
+.callout.warn .c-title{color:var(--red)}
+.callout.tip{background:#e7f4f2;border-color:#c7e6e1}
+.callout.tip .c-title{color:var(--teal)}
+.callout.note{background:var(--ambersoft);border-color:#eaddb4}
+.callout.note .c-title{color:var(--amber)}
+.checklist{list-style:none;padding:0;margin:18px 0}
+.checklist li{position:relative;padding:10px 12px 10px 40px;border:1px solid var(--line);border-radius:12px;margin:8px 0;background:#fff;font-size:16px}
+.checklist li:before{content:"✓";position:absolute;left:12px;top:10px;width:20px;height:20px;background:#e7f4f2;color:var(--teal);border-radius:6px;display:grid;place-items:center;font-weight:900;font-size:13px}
+.disease{border:1px solid var(--line);border-radius:18px;padding:4px 22px 20px;margin:22px 0;background:#fff}
+.disease h3{font-size:21px}
+.sym{font-size:15px;margin:10px 0 0}
+.sym b{color:var(--ink)}
+table.symptoms{width:100%;border-collapse:collapse;margin:18px 0;font-size:15px}
+table.symptoms th,table.symptoms td{border:1px solid var(--line);padding:11px 13px;text-align:left;vertical-align:top}
+table.symptoms th{background:#fffaf3;font-size:13px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted)}
+.sidebar{position:sticky;top:86px;display:flex;flex-direction:column;gap:20px}
+.toc{background:#fff;border:1px solid var(--line);border-radius:18px;padding:20px}
+.toc h4{margin:0 0 12px;font-size:13px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+.toc ol{margin:0;padding-left:20px}
+.toc li{margin:7px 0;font-size:14px}
+.toc a:hover{color:var(--orange)}
+.share-card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:20px}
+.share-card h4{margin:0 0 12px;font-size:13px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+.share-row{display:flex;gap:9px;flex-wrap:wrap}
+.share-row a{padding:8px 12px;border:1px solid var(--line);border-radius:10px;font-size:13px;font-weight:700;color:var(--teal)}
+.share-row a:hover{background:#fff3e8;color:var(--orange)}
+.mini-cta{background:linear-gradient(135deg,#fff7eb,#ecf7f5);border:1px solid var(--line);border-radius:18px;padding:20px}
+.mini-cta strong{display:block;font-size:17px;margin-bottom:6px}
+.mini-cta p{margin:0 0 12px;font-size:14px;color:var(--muted)}
+.mini-cta a{display:inline-block;background:var(--orange);color:#fff;font-weight:800;padding:10px 14px;border-radius:10px;font-size:14px}
+.related{max-width:1180px;margin:20px auto 0;padding:0 26px}
+.related h2{font-size:28px;margin:40px 0 18px}
+.related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.rel-card{background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;transition:.2s}
+.rel-card:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(83,55,25,.08)}
+.rel-card img{width:100%;height:150px;object-fit:cover}
+.rel-card .rc-body{padding:16px}
+.rel-card h4{margin:0 0 6px;font-size:16px}
+.rel-card p{margin:0;font-size:13px;color:var(--muted)}
+.disclaimer{max-width:1180px;margin:34px auto 0;padding:0 26px}
+.disclaimer .box{background:#fffaf3;border:1px solid var(--line);border-radius:16px;padding:18px 20px;font-size:14px;color:var(--muted)}
+.follow{max-width:1180px;margin:30px auto 0;padding:0 26px}
+.follow .box{display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between;background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px 24px}
+.follow h4{margin:0;font-size:18px}
+.footer{padding:34px 28px;text-align:center;color:var(--muted);border-top:1px solid var(--line);background:#fff;margin-top:34px}
+@media(max-width:960px){.layout{grid-template-columns:1fr}.sidebar{position:static;order:-1}.related-grid{grid-template-columns:1fr}.hero-img img{height:320px}}
+@media(max-width:680px){.navlinks{display:none}.article-head h1{font-size:33px}.standfirst{font-size:18px}.content p,.content li{font-size:16px}}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <nav class="nav">
+    <a class="brand" href="cat_article_index.html">Cat&amp;Me</a>
+    <div class="navlinks">
+      <a href="cat_article_index.html#categories">Categories</a>
+      <a href="cat_article_index.html#health">Health</a>
+      <a href="cat_article_index.html#food">Food</a>
+      <a href="cat_article_index.html#az">A-Z</a>
+    </div>
+    <div class="social">
+      <a href="https://facebook.com/" target="_blank" aria-label="Facebook page">f</a>
+      <a href="https://youtube.com/" target="_blank" aria-label="YouTube channel">▶</a>
+      <a href="mailto:hello@catandme.com" aria-label="Email Cat and Me">@</a>
+      <a href="https://instagram.com/" target="_blank" aria-label="Instagram page">◎</a>
+    </div>
+  </nav>
+</header>
+
+<nav class="crumbs">
+  <a href="cat_article_index.html">Home</a> &nbsp;/&nbsp;
+  <a href="cat_article_index.html#breeds">Cat Breeds &amp; Traits</a> &nbsp;/&nbsp;
+  <span>Siamese Cat Facts</span>
+</nav>
+
+<header class="article-head">
+  <div class="tagline">Cat Breeds &amp; Traits</div>
+  <h1>Siamese Cat Facts</h1>
+  <p class="standfirst">With their piercing blue eyes, elegant colour-point coats and famously talkative nature, Siamese cats are one of the world's oldest and most instantly recognisable breeds. Here's what makes a “meezer” so unique.</p>
+  <div class="meta">
+    <div>⏱️ <b>8 min</b> read</div>
+    <div>Updated <b>8 July 2026</b></div>
+    <div>First published <b>8 July 2026</b></div>
+    <div>Reviewed for <b>Cat&amp;Me</b></div>
+  </div>
+</header>
+
+<figure class="hero-img">
+  <img src="https://images.unsplash.com/photo-1513245543132-31f507417b26?auto=format&fit=crop&w=1400&q=85" alt="A Siamese cat with blue eyes">
+  <figcaption>Blue eyes, dark points and a lot to say: the unmistakable Siamese.</figcaption>
+</figure>
+
+<div class="layout">
+  <article class="content">
+    <p class="lead-para">Siamese cats are cats of extremes — long, slender lines, a striking triangular face, and a personality every bit as bold as their looks. Affectionately nicknamed “meezers,” they're loving, clever and endlessly chatty. Here are the facts behind this legendary breed.</p>
+
+    <div class="callout note">
+      <p class="c-title">💡 Quick summary</p>
+      <p>Origin: Thailand (formerly Siam). Size: medium, slender, muscular. Coat: short, fine, colour-pointed. Eyes: always blue. Temperament: highly social, vocal, intelligent. Lifespan: often into the mid-teens or beyond.</p>
+    </div>
+
+    <hr class="divider">
+
+    <h2 id="ancient">1. One of the oldest known cat breeds</h2>
+    <p>The Siamese comes from Thailand, formerly known as Siam. It's one of the oldest and first distinctly recognised breeds of domestic cat, appearing in an ancient Thai manuscript called the <em>Tamra Maew</em> (“The Cat-Book Poems”), thought to date back several centuries. Siamese cats were prized by royalty and temples, which may explain their air of self-importance! They were officially recognised in the West in the early 1900s and quickly became one of the most popular pedigree cats.</p>
+
+    <hr class="divider">
+
+    <h2 id="looks">2. Blue eyes and colour points</h2>
+    <p>The Siamese has a short, glossy coat that lies close to its slender body, with a lighter body colour and darker “points” on the ears, face (mask), legs, paws and tail. Their almond-shaped eyes are always a vivid blue.</p>
+    <table class="symptoms">
+      <thead><tr><th>Classic point colours</th><th>Appearance</th></tr></thead>
+      <tbody>
+        <tr><td>Seal point</td><td>Deep brown, almost black points on a cream body</td></tr>
+        <tr><td>Chocolate point</td><td>Warm milk-chocolate points on an ivory body</td></tr>
+        <tr><td>Blue point</td><td>Cool slate-grey points on a bluish-white body</td></tr>
+        <tr><td>Lilac point</td><td>Pinkish-grey points on a pale, frosty body</td></tr>
+      </tbody>
+    </table>
+
+    <div class="callout tip">
+      <p class="c-title">✓ Why the points? A temperature trick</p>
+      <p>Siamese kittens are born almost pure white. Their colour is <strong>temperature-sensitive</strong> — the darker points develop on the cooler parts of the body (ears, face, paws, tail), while the warmer body stays pale. Cats in cooler climates often develop darker coats.</p>
+    </div>
+
+    <hr class="divider">
+
+    <h2 id="personality">3. Vocal, social and highly intelligent</h2>
+    <p>If you want a quiet, aloof cat, the Siamese is not for you. These are among the most people-oriented of all breeds — they crave company, follow their owners everywhere, and “supervise” everything you do. They're also famously <strong>vocal</strong>, holding loud, insistent “conversations” with a distinctive raspy meow.</p>
+    <p>Siamese cats are often considered one of the most intelligent breeds. They can learn tricks, walk on a harness, and solve puzzle feeders — but that cleverness means they need plenty of stimulation, and they don't like being ignored or left alone for long.</p>
+    <div class="callout warn">
+      <p class="c-title">⚠️ Not a “leave them alone” cat</p>
+      <p>Siamese thrive on interaction and can become stressed, bored or destructive if left alone too much. Many owners keep them in pairs or ensure plenty of daily play and company.</p>
+    </div>
+
+    <hr class="divider">
+
+    <h2 id="care">4. Care &amp; grooming</h2>
+    <p>Their short, fine coat is wonderfully low-maintenance — a weekly brush or even a quick stroke with a damp hand is usually enough to keep it glossy. Beyond that, the Siamese needs what all cats need: good food, fresh water, clean litter, and — crucially for this breed — lots of mental and physical enrichment.</p>
+
+    <hr class="divider">
+
+    <h2 id="health">5. Health &amp; lifespan</h2>
+    <p>Siamese are often long-lived, frequently reaching their mid-teens and beyond with good care. Like all pedigree breeds, they can be predisposed to certain conditions, including respiratory issues, dental disease, some heart defects, and occasionally eye or neurological conditions. Choosing a responsible breeder and keeping up with regular vet check-ups helps keep them healthy.</p>
+
+    <hr class="divider">
+
+    <h2 id="right-for-you">Is a Siamese right for you?</h2>
+    <ul class="checklist">
+      <li>You want an affectionate, interactive, “velcro” companion</li>
+      <li>You don't mind — or actively enjoy — a talkative cat</li>
+      <li>Someone is home often, or the cat has feline company</li>
+      <li>You can provide daily play, puzzles and enrichment</li>
+      <li>You'd like a low-grooming, elegant short-haired cat</li>
+    </ul>
+
+    <div class="callout tip">
+      <p class="c-title">✓ The takeaway</p>
+      <p>The Siamese is a striking, ancient breed with blue eyes, colour points and a huge personality. Intelligent, loyal and extremely social, they make devoted companions — as long as you can give them the attention, interaction and mental stimulation they crave.</p>
+    </div>
+  </article>
+
+  <aside class="sidebar">
+    <div class="toc">
+      <h4>In this article</h4>
+      <ol>
+        <li><a href="#ancient">An ancient breed</a></li>
+        <li><a href="#looks">Blue eyes &amp; colour points</a></li>
+        <li><a href="#personality">Vocal &amp; intelligent</a></li>
+        <li><a href="#care">Care &amp; grooming</a></li>
+        <li><a href="#health">Health &amp; lifespan</a></li>
+        <li><a href="#right-for-you">Is it right for you?</a></li>
+      </ol>
+    </div>
+    <div class="share-card">
+      <h4>Share this article</h4>
+      <div class="share-row">
+        <a href="mailto:?subject=Siamese%20Cat%20Facts">Email</a>
+        <a href="https://www.facebook.com/sharer/sharer.php" target="_blank">Facebook</a>
+        <a href="https://api.whatsapp.com/send" target="_blank">WhatsApp</a>
+        <a href="https://www.linkedin.com/sharing/share-offsite/" target="_blank">LinkedIn</a>
+      </div>
+    </div>
+    <div class="mini-cta">
+      <strong>Curious about other breeds?</strong>
+      <p>See which cats are the best fit for family homes.</p>
+      <a href="article-best-cat-breeds-for-families.html">Read: Best cat breeds for families</a>
+    </div>
+  </aside>
+</div>
+
+<section class="related">
+  <h2>Keep reading</h2>
+  <div class="related-grid">
+    <a class="rel-card" href="article-maine-coon-facts.html">
+      <img src="https://images.unsplash.com/photo-1615789591457-74a63395c990?auto=format&fit=crop&w=800&q=80" alt="Maine Coon cat">
+      <div class="rc-body"><h4>Maine Coon Facts</h4><p>The friendly giant of the cat world.</p></div>
+    </a>
+    <a class="rel-card" href="article-best-cat-breeds-for-families.html">
+      <img src="https://images.unsplash.com/photo-1555685812-4b943f1cb0eb?auto=format&fit=crop&w=800&q=80" alt="Relaxed cat at home">
+      <div class="rc-body"><h4>Best Cat Breeds for Families</h4><p>The friendliest breeds for busy homes.</p></div>
+    </a>
+    <a class="rel-card" href="article-are-cats-hypoallergenic.html">
+      <img src="https://images.unsplash.com/photo-1596854407944-bf87f6fdd49e?auto=format&fit=crop&w=800&q=80" alt="Close up of a cat">
+      <div class="rc-body"><h4>Are Cats Hypoallergenic?</h4><p>The truth about allergy-friendly cats.</p></div>
+    </a>
+  </div>
+</section>
+
+<section class="disclaimer">
+  <div class="box">ℹ️ <strong>Please note:</strong> This article is for general educational purposes only and does not replace professional veterinary advice. If you have concerns about your cat's health or breed-related conditions, contact your vet.</div>
+</section>
+
+<section class="follow">
+  <div class="box">
+    <h4>Follow Cat&amp;Me for more cat-care tips</h4>
+    <div class="social">
+      <a href="https://facebook.com/" target="_blank" aria-label="Facebook page">f</a>
+      <a href="https://youtube.com/" target="_blank" aria-label="YouTube channel">▶</a>
+      <a href="mailto:hello@catandme.com" aria-label="Email Cat and Me">@</a>
+      <a href="https://instagram.com/" target="_blank" aria-label="Instagram page">◎</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">© 2026 Cat&amp;Me. Educational cat-care content only — contact a qualified vet for medical concerns.</footer>
+</body>
+</html>

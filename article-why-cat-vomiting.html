@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Why Is My Cat Vomiting? | Cat&Me</title>
+<meta name="description" content="A plain-English guide to why cats vomit — hairballs, eating too fast, diet changes, and more serious causes — plus what different vomit colours mean and exactly when to call the vet.">
+<style>
+:root{--ink:#24211f;--muted:#6f6760;--paper:#fffaf4;--cream:#f5eadc;--orange:#d77a35;--teal:#3f918b;--line:#eadccb;--card:#fff;--dark:#243b39;--red:#c9503f;--redsoft:#fbe9e6;--amber:#b57d1f;--ambersoft:#fbf1da}
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--paper);color:var(--ink);line-height:1.6}
+a{text-decoration:none;color:inherit}
+/* ===== Shared header (matches homepage) ===== */
+.topbar{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:5}
+.nav{max-width:1180px;margin:auto;padding:14px 26px;display:flex;align-items:center;justify-content:space-between;gap:22px}
+.brand{font-size:28px;font-weight:900;color:var(--orange);letter-spacing:-.5px}
+.navlinks{display:flex;gap:22px;font-size:15px;color:var(--muted)}
+.navlinks a:hover{color:var(--orange)}
+.social{display:flex;gap:9px}
+.social a{width:38px;height:38px;border:1px solid var(--line);border-radius:50%;display:grid;place-items:center;background:#fff;color:var(--teal);font-weight:800}
+.social a:hover{background:#fff3e8;color:var(--orange)}
+/* ===== Breadcrumb ===== */
+.crumbs{max-width:1180px;margin:auto;padding:18px 26px 0;font-size:13px;color:var(--muted)}
+.crumbs a:hover{color:var(--orange)}
+.crumbs span{color:var(--ink);font-weight:700}
+/* ===== Article header ===== */
+.article-head{max-width:1180px;margin:auto;padding:16px 26px 8px}
+.tagline{color:var(--teal);font-weight:900;text-transform:uppercase;letter-spacing:.12em;font-size:12px}
+.article-head h1{font-size:46px;line-height:1.06;letter-spacing:-1.2px;margin:12px 0 14px;max-width:900px}
+.standfirst{font-size:20px;color:var(--muted);max-width:820px;margin:0}
+.meta{display:flex;flex-wrap:wrap;gap:22px;margin:22px 0 0;padding:16px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);font-size:14px;color:var(--muted)}
+.meta b{color:var(--ink)}
+.hero-img{max-width:1180px;margin:26px auto 0;padding:0 26px}
+.hero-img img{width:100%;height:440px;object-fit:cover;border-radius:24px;border:8px solid #fff;box-shadow:0 16px 40px rgba(78,55,29,.16)}
+.hero-img figcaption{color:var(--muted);font-size:13px;margin-top:10px;text-align:center}
+/* ===== Layout: content + sidebar ===== */
+.layout{max-width:1180px;margin:34px auto 0;padding:0 26px;display:grid;grid-template-columns:1fr 300px;gap:48px;align-items:start}
+.content{max-width:760px}
+.content h2{font-size:29px;letter-spacing:-.4px;margin:40px 0 6px;scroll-margin-top:90px}
+.content h3{font-size:20px;margin:26px 0 4px}
+.content p{font-size:17px;margin:14px 0}
+.content ul,.content ol{padding-left:22px;margin:12px 0}
+.content li{margin:8px 0;font-size:17px}
+.lead-para{font-size:19px;color:#403a34}
+.divider{height:1px;background:var(--line);border:0;margin:38px 0}
+.tag-row{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 0}
+.tag{font-size:12px;font-weight:800;padding:5px 10px;border-radius:99px;background:#e7f4f2;color:var(--teal)}
+.tag.chronic{background:var(--ambersoft);color:var(--amber)}
+.tag.infectious{background:var(--redsoft);color:var(--red)}
+/* Callouts */
+.callout{border-radius:16px;padding:18px 20px;margin:22px 0;border:1px solid var(--line);background:var(--cream)}
+.callout .c-title{font-weight:800;margin:0 0 6px;display:flex;align-items:center;gap:8px}
+.callout p{margin:6px 0 0;font-size:16px}
+.callout.warn{background:var(--redsoft);border-color:#f2c9c2}
+.callout.warn .c-title{color:var(--red)}
+.callout.tip{background:#e7f4f2;border-color:#c7e6e1}
+.callout.tip .c-title{color:var(--teal)}
+.callout.note{background:var(--ambersoft);border-color:#eaddb4}
+.callout.note .c-title{color:var(--amber)}
+/* cause block */
+.disease{border:1px solid var(--line);border-radius:18px;padding:4px 22px 20px;margin:22px 0;background:#fff}
+.disease h3{font-size:21px}
+.sym{font-size:15px;margin:10px 0 0}
+.sym b{color:var(--ink)}
+/* Emergency box */
+.emergency{background:var(--dark);color:#fff;border-radius:20px;padding:26px 28px;margin:30px 0}
+.emergency h3{color:#fff;margin:0 0 10px;font-size:22px}
+.emergency ul{columns:2;column-gap:28px}
+.emergency li{color:rgba(255,255,255,.9);font-size:15px}
+.emergency p{color:rgba(255,255,255,.75);font-size:14px;margin:12px 0 0}
+@media(max-width:620px){.emergency ul{columns:1}}
+/* table */
+table.symptoms{width:100%;border-collapse:collapse;margin:18px 0;font-size:15px}
+table.symptoms th,table.symptoms td{border:1px solid var(--line);padding:11px 13px;text-align:left;vertical-align:top}
+table.symptoms th{background:#fffaf3;font-size:13px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted)}
+/* ===== Sidebar ===== */
+.sidebar{position:sticky;top:86px;display:flex;flex-direction:column;gap:20px}
+.toc{background:#fff;border:1px solid var(--line);border-radius:18px;padding:20px}
+.toc h4{margin:0 0 12px;font-size:13px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+.toc ol{margin:0;padding-left:20px}
+.toc li{margin:7px 0;font-size:14px}
+.toc a:hover{color:var(--orange)}
+.share-card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:20px}
+.share-card h4{margin:0 0 12px;font-size:13px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+.share-row{display:flex;gap:9px;flex-wrap:wrap}
+.share-row a{padding:8px 12px;border:1px solid var(--line);border-radius:10px;font-size:13px;font-weight:700;color:var(--teal)}
+.share-row a:hover{background:#fff3e8;color:var(--orange)}
+.mini-cta{background:linear-gradient(135deg,#fff7eb,#ecf7f5);border:1px solid var(--line);border-radius:18px;padding:20px}
+.mini-cta strong{display:block;font-size:17px;margin-bottom:6px}
+.mini-cta p{margin:0 0 12px;font-size:14px;color:var(--muted)}
+.mini-cta a{display:inline-block;background:var(--orange);color:#fff;font-weight:800;padding:10px 14px;border-radius:10px;font-size:14px}
+/* ===== Related ===== */
+.related{max-width:1180px;margin:20px auto 0;padding:0 26px}
+.related h2{font-size:28px;margin:40px 0 18px}
+.related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.rel-card{background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;transition:.2s}
+.rel-card:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(83,55,25,.08)}
+.rel-card img{width:100%;height:150px;object-fit:cover}
+.rel-card .rc-body{padding:16px}
+.rel-card h4{margin:0 0 6px;font-size:16px}
+.rel-card p{margin:0;font-size:13px;color:var(--muted)}
+/* ===== Footer ===== */
+.disclaimer{max-width:1180px;margin:34px auto 0;padding:0 26px}
+.disclaimer .box{background:#fffaf3;border:1px solid var(--line);border-radius:16px;padding:18px 20px;font-size:14px;color:var(--muted)}
+.follow{max-width:1180px;margin:30px auto 0;padding:0 26px}
+.follow .box{display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between;background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px 24px}
+.follow h4{margin:0;font-size:18px}
+.footer{padding:34px 28px;text-align:center;color:var(--muted);border-top:1px solid var(--line);background:#fff;margin-top:34px}
+@media(max-width:960px){.layout{grid-template-columns:1fr}.sidebar{position:static;order:-1}.related-grid{grid-template-columns:1fr}.hero-img img{height:320px}}
+@media(max-width:680px){.navlinks{display:none}.article-head h1{font-size:33px}.standfirst{font-size:18px}.content p,.content li{font-size:16px}}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <nav class="nav">
+    <a class="brand" href="cat_article_index.html">Cat&amp;Me</a>
+    <div class="navlinks">
+      <a href="cat_article_index.html#categories">Categories</a>
+      <a href="cat_article_index.html#health">Health</a>
+      <a href="cat_article_index.html#food">Food</a>
+      <a href="cat_article_index.html#az">A-Z</a>
+    </div>
+    <div class="social">
+      <a href="https://facebook.com/" target="_blank" aria-label="Facebook page">f</a>
+      <a href="https://youtube.com/" target="_blank" aria-label="YouTube channel">▶</a>
+      <a href="mailto:hello@catandme.com" aria-label="Email Cat and Me">@</a>
+      <a href="https://instagram.com/" target="_blank" aria-label="Instagram page">◎</a>
+    </div>
+  </nav>
+</header>
+
+<nav class="crumbs">
+  <a href="cat_article_index.html">Home</a> &nbsp;/&nbsp;
+  <a href="cat_article_index.html#health">Cat Health &amp; Wellness</a> &nbsp;/&nbsp;
+  <span>Why Is My Cat Vomiting?</span>
+</nav>
+
+<header class="article-head">
+  <div class="tagline">Cat Health &amp; Wellness</div>
+  <h1>Why Is My Cat Vomiting?</h1>
+  <p class="standfirst">Cats vomit for all sorts of reasons — some harmless, some serious. Here’s how to tell the difference, what the colour of the vomit can mean, and exactly when it’s time to call your vet.</p>
+  <div class="meta">
+    <div>⏱️ <b>10 min</b> read</div>
+    <div>Updated <b>7 July 2026</b></div>
+    <div>First published <b>4 July 2026</b></div>
+    <div>Reviewed for <b>Cat&amp;Me Health</b></div>
+  </div>
+</header>
+
+<figure class="hero-img">
+  <img src="https://images.unsplash.com/photo-1543852786-1cf6624b9987?auto=format&fit=crop&w=1400&q=85" alt="A cat lying down looking slightly unwell">
+  <figcaption>The occasional hairball can be normal — but frequent vomiting is your cat’s way of telling you something is wrong.</figcaption>
+</figure>
+
+<div class="layout">
+  <article class="content">
+    <p class="lead-para">Almost every cat owner has stepped on a cold, damp surprise at some point. Vomiting is so common in cats that it’s easy to shrug off — but vets are clear on one thing: <strong>vomiting is common, yet it is not “normal.”</strong> It’s usually a sign of something, even if that something is minor.</p>
+    <p>The good news is that most one-off episodes are harmless. The key is knowing how to tell an occasional hairball from a pattern that needs a vet. This guide walks through the difference between vomiting and regurgitation, the most common causes, what the colour means, and the red flags that mean “call the vet now.”</p>
+
+    <div class="callout note">
+      <p class="c-title">💡 The quick rule of thumb</p>
+      <p>An occasional hairball or one-off sick-up in an otherwise happy, eating, playful cat is usually fine to monitor. Vomiting that is <strong>repeated, frequent, or paired with other symptoms</strong> (off food, tired, diarrhoea) needs a vet.</p>
+    </div>
+
+    <hr class="divider">
+
+    <h2 id="vs">Vomiting vs. regurgitation</h2>
+    <p>These look similar but mean different things, and your vet will want to know which you saw.</p>
+    <ul>
+      <li><strong>Vomiting</strong> is active. The cat heaves, its belly contracts, and what comes up is usually partly digested and may contain bile (yellow fluid). It often comes with drooling or nausea beforehand.</li>
+      <li><strong>Regurgitation</strong> is passive. Food comes back up quickly and effortlessly, usually undigested and tube-shaped, with no heaving. This points more to the oesophagus than the stomach.</li>
+    </ul>
+    <p>If you can, note which one it looked like, how long after eating it happened, and what the material looked like. A quick phone video is genuinely useful for your vet.</p>
+
+    <hr class="divider">
+
+    <h2 id="common">Common causes that are usually mild</h2>
+
+    <div class="disease">
+      <h3>Hairballs</h3>
+      <div class="tag-row"><span class="tag">Very common</span><span class="tag">Manageable</span></div>
+      <p>The classic cause. As cats groom, they swallow loose hair that can collect in the stomach and be brought back up. More common in long-haired cats and heavy groomers.</p>
+      <p class="sym"><b>Help at home:</b> brush your cat regularly, offer a fibre-rich or hairball-control diet, and keep them well hydrated. <b>But note:</b> frequent hairballs (more than about one a week, or daily) can actually signal an underlying gut problem — mention it to your vet.</p>
+    </div>
+
+    <div class="disease">
+      <h3>Eating too fast</h3>
+      <div class="tag-row"><span class="tag">Very common</span><span class="tag">Easy fix</span></div>
+      <p>Some cats bolt their food and bring it straight back up, undigested, minutes later. This is sometimes called “scarf and barf.”</p>
+      <p class="sym"><b>Help at home:</b> feed smaller, more frequent meals, use a slow-feeder bowl or puzzle feeder, and separate cats that compete at mealtimes.</p>
+    </div>
+
+    <div class="disease">
+      <h3>Diet changes &amp; dietary upsets</h3>
+      <div class="tag-row"><span class="tag">Common</span><span class="tag">Preventable</span></div>
+      <p>A sudden switch of food, spoiled or too-cold food, or eating something they shouldn’t (like grass or a houseplant) can all irritate the stomach.</p>
+      <p class="sym"><b>Help at home:</b> change foods gradually over about a week, serve wet food at room temperature, and keep toxic plants such as lilies out of the house.</p>
+    </div>
+
+    <div class="disease">
+      <h3>An empty stomach (bile vomiting)</h3>
+      <div class="tag-row"><span class="tag">Common</span><span class="tag">Manageable</span></div>
+      <p>If too long passes between meals, stomach acid and bile can build up and irritate the lining, bringing up yellow, foamy liquid — often first thing in the morning.</p>
+      <p class="sym"><b>Help at home:</b> splitting meals so the gap between them is shorter often helps. If it keeps happening, ask your vet.</p>
+    </div>
+
+    <hr class="divider">
+
+    <h2 id="serious">Causes that need a vet</h2>
+    <p>Vomiting can also be the first visible sign of a more serious problem, especially when it’s frequent or comes with other symptoms.</p>
+    <ul>
+      <li><strong>Intestinal parasites (worms)</strong> — you may even see worms in the vomit.</li>
+      <li><strong>Foreign bodies</strong> — string, toys or other objects causing a blockage. This can be an emergency.</li>
+      <li><strong>Kidney disease</strong> — a common cause in older cats.</li>
+      <li><strong>Hyperthyroidism</strong> — an overactive thyroid in middle-aged and senior cats.</li>
+      <li><strong>Inflammatory bowel disease (IBD) or food intolerance</strong> — a frequent cause of chronic vomiting.</li>
+      <li><strong>Pancreatitis or liver disease.</strong></li>
+      <li><strong>Infections, toxins, or reactions to medication.</strong></li>
+      <li><strong>Cancer</strong> — less common, but possible, particularly in older cats.</li>
+    </ul>
+    <p>You don’t need to work out which one it is — that’s your vet’s job. Your job is to notice the pattern and the accompanying signs.</p>
+
+    <hr class="divider">
+
+    <h2 id="colour">What the colour can tell you</h2>
+    <p>Colour is a helpful clue, not a diagnosis — but it’s worth noting before you clean up.</p>
+    <table class="symptoms">
+      <thead><tr><th>What you see</th><th>What it may mean</th></tr></thead>
+      <tbody>
+        <tr><td>Clump of hair</td><td>Hairball — usually mild if occasional</td></tr>
+        <tr><td>Undigested food</td><td>Ate too fast, or regurgitation</td></tr>
+        <tr><td>Yellow / foamy</td><td>Bile, often from an empty stomach</td></tr>
+        <tr><td>Clear or white foam</td><td>Empty stomach or irritation</td></tr>
+        <tr><td>Green</td><td>Bile, or eaten plant material</td></tr>
+        <tr><td>Bright red blood</td><td>Active bleeding — see a vet promptly</td></tr>
+        <tr><td>Brown, “coffee-ground” look</td><td>Digested blood — see a vet promptly</td></tr>
+      </tbody>
+    </table>
+
+    <div class="emergency">
+      <h3>🚨 Call a vet straight away if</h3>
+      <ul>
+        <li>Vomiting more than 2–3 times in a row</li>
+        <li>Blood in the vomit (red or coffee-ground)</li>
+        <li>Can’t keep water down</li>
+        <li>Weakness, collapse or severe lethargy</li>
+        <li>Not eating for more than 24 hours</li>
+        <li>Vomiting plus diarrhoea together</li>
+        <li>Signs of dehydration (sunken eyes, dry gums)</li>
+        <li>Already has kidney disease, diabetes or hyperthyroidism</li>
+      </ul>
+      <p>Very young kittens and senior cats become dehydrated fast — don’t wait as long before calling.</p>
+    </div>
+
+    <h2 id="home">What you can do at home (for mild cases)</h2>
+    <p>If your cat has vomited once, seems otherwise well, and has none of the red flags above, vets often suggest:</p>
+    <ol>
+      <li>Remove food for a short period (around 12 hours for an adult cat), but keep water available.</li>
+      <li>Offer small sips of water or a few ice cubes so they stay hydrated.</li>
+      <li>Reintroduce small amounts of a plain, bland food, then gradually return to normal if the vomiting has stopped.</li>
+      <li>Watch closely for the next 24 hours for any of the warning signs.</li>
+    </ol>
+    <div class="callout warn">
+      <p class="c-title">⚠️ Don’t fast kittens or seniors</p>
+      <p>Withholding food is only for otherwise-healthy adult cats. Kittens, senior cats, and cats with existing conditions should be seen by a vet rather than fasted. Never give human anti-sickness medicines without vet advice.</p>
+    </div>
+
+    <h2 id="prevent">Lowering the chances</h2>
+    <ul>
+      <li>Brush regularly to cut down on swallowed hair.</li>
+      <li>Feed measured meals and slow down fast eaters.</li>
+      <li>Change diets gradually, not overnight.</li>
+      <li>Keep toxic plants and swallowable objects (string, hair ties) out of reach.</li>
+      <li>Stay up to date with worming.</li>
+      <li>Keep up routine vet check-ups so conditions like kidney disease are caught early.</li>
+    </ul>
+
+    <div class="callout tip">
+      <p class="c-title">✓ The takeaway</p>
+      <p>One hairball from a happy, hungry cat is rarely a worry. Vomiting that repeats, or comes with a change in appetite, energy or litter tray habits, deserves a vet visit. When in doubt, phone your vet and describe what you saw.</p>
+    </div>
+  </article>
+
+  <aside class="sidebar">
+    <div class="toc">
+      <h4>In this article</h4>
+      <ol>
+        <li><a href="#vs">Vomiting vs. regurgitation</a></li>
+        <li><a href="#common">Common mild causes</a></li>
+        <li><a href="#serious">Causes that need a vet</a></li>
+        <li><a href="#colour">What the colour means</a></li>
+        <li><a href="#home">What to do at home</a></li>
+        <li><a href="#prevent">Lowering the chances</a></li>
+      </ol>
+    </div>
+    <div class="share-card">
+      <h4>Share this article</h4>
+      <div class="share-row">
+        <a href="mailto:?subject=Why%20Is%20My%20Cat%20Vomiting%3F">Email</a>
+        <a href="https://www.facebook.com/sharer/sharer.php" target="_blank">Facebook</a>
+        <a href="https://api.whatsapp.com/send" target="_blank">WhatsApp</a>
+        <a href="https://www.linkedin.com/sharing/share-offsite/" target="_blank">LinkedIn</a>
+      </div>
+    </div>
+    <div class="mini-cta">
+      <strong>Worried it’s more than a hairball?</strong>
+      <p>Learn the wider warning signs that mean it’s time to call the vet.</p>
+      <a href="article-10-signs-cat-sick.html">Read: 10 signs your cat may be sick</a>
+    </div>
+  </aside>
+</div>
+
+<section class="related">
+  <h2>Keep reading</h2>
+  <div class="related-grid">
+    <a class="rel-card" href="article-10-signs-cat-sick.html">
+      <img src="https://images.unsplash.com/photo-1574144611937-0df059b5ef3e?auto=format&fit=crop&w=800&q=80" alt="Cat resting while watched for signs of illness">
+      <div class="rc-body"><h4>10 Signs Your Cat May Be Sick</h4><p>The subtle warning signs owners should never ignore.</p></div>
+    </a>
+    <a class="rel-card" href="article-common-cat-diseases.html">
+      <img src="https://images.unsplash.com/photo-1592194996308-7b43878e84a6?auto=format&fit=crop&w=800&q=80" alt="Calm cat resting">
+      <div class="rc-body"><h4>Common Cat Diseases Explained</h4><p>The health problems cats face most often, in plain English.</p></div>
+    </a>
+    <a class="rel-card" href="cat_article_index.html#health">
+      <img src="https://images.unsplash.com/photo-1519052537078-e6302a4968d4?auto=format&fit=crop&w=800&q=80" alt="Older cat relaxing">
+      <div class="rc-body"><h4>Senior Cat Health Checklist</h4><p>Extra care that helps ageing cats stay comfortable.</p></div>
+    </a>
+  </div>
+</section>
+
+<section class="disclaimer">
+  <div class="box">ℹ️ <strong>Please note:</strong> This article is for general educational purposes only and does not replace professional veterinary advice. If you are worried about your cat’s health, always contact your vet or a local emergency clinic.</div>
+</section>
+
+<section class="follow">
+  <div class="box">
+    <h4>Follow Cat&amp;Me for more cat-care tips</h4>
+    <div class="social">
+      <a href="https://facebook.com/" target="_blank" aria-label="Facebook page">f</a>
+      <a href="https://youtube.com/" target="_blank" aria-label="YouTube channel">▶</a>
+      <a href="mailto:hello@catandme.com" aria-label="Email Cat and Me">@</a>
+      <a href="https://instagram.com/" target="_blank" aria-label="Instagram page">◎</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">© 2026 Cat&amp;Me. Educational cat-care content only — contact a qualified vet for medical concerns.</footer>
+</body>
+</html>

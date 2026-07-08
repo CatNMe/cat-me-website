@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Why Cats Need Meat | Cat&Me</title>
+<meta name="description" content="Cats are obligate carnivores — here’s what that means, why they need animal protein and nutrients like taurine, arachidonic acid and vitamin A, and what a meat-based diet should look like.">
+<style>
+:root{--ink:#24211f;--muted:#6f6760;--paper:#fffaf4;--cream:#f5eadc;--orange:#d77a35;--teal:#3f918b;--line:#eadccb;--card:#fff;--dark:#243b39;--red:#c9503f;--redsoft:#fbe9e6;--amber:#b57d1f;--ambersoft:#fbf1da}
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--paper);color:var(--ink);line-height:1.6}
+a{text-decoration:none;color:inherit}
+.topbar{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:5}
+.nav{max-width:1180px;margin:auto;padding:14px 26px;display:flex;align-items:center;justify-content:space-between;gap:22px}
+.brand{font-size:28px;font-weight:900;color:var(--orange);letter-spacing:-.5px}
+.navlinks{display:flex;gap:22px;font-size:15px;color:var(--muted)}
+.navlinks a:hover{color:var(--orange)}
+.social{display:flex;gap:9px}
+.social a{width:38px;height:38px;border:1px solid var(--line);border-radius:50%;display:grid;place-items:center;background:#fff;color:var(--teal);font-weight:800}
+.social a:hover{background:#fff3e8;color:var(--orange)}
+.crumbs{max-width:1180px;margin:auto;padding:18px 26px 0;font-size:13px;color:var(--muted)}
+.crumbs a:hover{color:var(--orange)}
+.crumbs span{color:var(--ink);font-weight:700}
+.article-head{max-width:1180px;margin:auto;padding:16px 26px 8px}
+.tagline{color:var(--teal);font-weight:900;text-transform:uppercase;letter-spacing:.12em;font-size:12px}
+.article-head h1{font-size:46px;line-height:1.06;letter-spacing:-1.2px;margin:12px 0 14px;max-width:900px}
+.standfirst{font-size:20px;color:var(--muted);max-width:820px;margin:0}
+.meta{display:flex;flex-wrap:wrap;gap:22px;margin:22px 0 0;padding:16px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);font-size:14px;color:var(--muted)}
+.meta b{color:var(--ink)}
+.hero-img{max-width:1180px;margin:26px auto 0;padding:0 26px}
+.hero-img img{width:100%;height:440px;object-fit:cover;border-radius:24px;border:8px solid #fff;box-shadow:0 16px 40px rgba(78,55,29,.16)}
+.hero-img figcaption{color:var(--muted);font-size:13px;margin-top:10px;text-align:center}
+.layout{max-width:1180px;margin:34px auto 0;padding:0 26px;display:grid;grid-template-columns:1fr 300px;gap:48px;align-items:start}
+.content{max-width:760px}
+.content h2{font-size:29px;letter-spacing:-.4px;margin:40px 0 6px;scroll-margin-top:90px}
+.content h3{font-size:20px;margin:26px 0 4px}
+.content p{font-size:17px;margin:14px 0}
+.content ul,.content ol{padding-left:22px;margin:12px 0}
+.content li{margin:8px 0;font-size:17px}
+.lead-para{font-size:19px;color:#403a34}
+.divider{height:1px;background:var(--line);border:0;margin:38px 0}
+.callout{border-radius:16px;padding:18px 20px;margin:22px 0;border:1px solid var(--line);background:var(--cream)}
+.callout .c-title{font-weight:800;margin:0 0 6px;display:flex;align-items:center;gap:8px}
+.callout p{margin:6px 0 0;font-size:16px}
+.callout.warn{background:var(--redsoft);border-color:#f2c9c2}
+.callout.warn .c-title{color:var(--red)}
+.callout.tip{background:#e7f4f2;border-color:#c7e6e1}
+.callout.tip .c-title{color:var(--teal)}
+.callout.note{background:var(--ambersoft);border-color:#eaddb4}
+.callout.note .c-title{color:var(--amber)}
+.disease{border:1px solid var(--line);border-radius:18px;padding:4px 22px 20px;margin:22px 0;background:#fff}
+.disease h3{font-size:21px}
+.sym{font-size:15px;margin:10px 0 0}
+.sym b{color:var(--ink)}
+table.symptoms{width:100%;border-collapse:collapse;margin:18px 0;font-size:15px}
+table.symptoms th,table.symptoms td{border:1px solid var(--line);padding:11px 13px;text-align:left;vertical-align:top}
+table.symptoms th{background:#fffaf3;font-size:13px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted)}
+.sidebar{position:sticky;top:86px;display:flex;flex-direction:column;gap:20px}
+.toc{background:#fff;border:1px solid var(--line);border-radius:18px;padding:20px}
+.toc h4{margin:0 0 12px;font-size:13px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+.toc ol{margin:0;padding-left:20px}
+.toc li{margin:7px 0;font-size:14px}
+.toc a:hover{color:var(--orange)}
+.share-card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:20px}
+.share-card h4{margin:0 0 12px;font-size:13px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+.share-row{display:flex;gap:9px;flex-wrap:wrap}
+.share-row a{padding:8px 12px;border:1px solid var(--line);border-radius:10px;font-size:13px;font-weight:700;color:var(--teal)}
+.share-row a:hover{background:#fff3e8;color:var(--orange)}
+.mini-cta{background:linear-gradient(135deg,#fff7eb,#ecf7f5);border:1px solid var(--line);border-radius:18px;padding:20px}
+.mini-cta strong{display:block;font-size:17px;margin-bottom:6px}
+.mini-cta p{margin:0 0 12px;font-size:14px;color:var(--muted)}
+.mini-cta a{display:inline-block;background:var(--orange);color:#fff;font-weight:800;padding:10px 14px;border-radius:10px;font-size:14px}
+.related{max-width:1180px;margin:20px auto 0;padding:0 26px}
+.related h2{font-size:28px;margin:40px 0 18px}
+.related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.rel-card{background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;transition:.2s}
+.rel-card:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(83,55,25,.08)}
+.rel-card img{width:100%;height:150px;object-fit:cover}
+.rel-card .rc-body{padding:16px}
+.rel-card h4{margin:0 0 6px;font-size:16px}
+.rel-card p{margin:0;font-size:13px;color:var(--muted)}
+.disclaimer{max-width:1180px;margin:34px auto 0;padding:0 26px}
+.disclaimer .box{background:#fffaf3;border:1px solid var(--line);border-radius:16px;padding:18px 20px;font-size:14px;color:var(--muted)}
+.follow{max-width:1180px;margin:30px auto 0;padding:0 26px}
+.follow .box{display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between;background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px 24px}
+.follow h4{margin:0;font-size:18px}
+.footer{padding:34px 28px;text-align:center;color:var(--muted);border-top:1px solid var(--line);background:#fff;margin-top:34px}
+@media(max-width:960px){.layout{grid-template-columns:1fr}.sidebar{position:static;order:-1}.related-grid{grid-template-columns:1fr}.hero-img img{height:320px}}
+@media(max-width:680px){.navlinks{display:none}.article-head h1{font-size:33px}.standfirst{font-size:18px}.content p,.content li{font-size:16px}}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <nav class="nav">
+    <a class="brand" href="cat_article_index.html">Cat&amp;Me</a>
+    <div class="navlinks">
+      <a href="cat_article_index.html#categories">Categories</a>
+      <a href="cat_article_index.html#health">Health</a>
+      <a href="cat_article_index.html#food">Food</a>
+      <a href="cat_article_index.html#az">A-Z</a>
+    </div>
+    <div class="social">
+      <a href="https://facebook.com/" target="_blank" aria-label="Facebook page">f</a>
+      <a href="https://youtube.com/" target="_blank" aria-label="YouTube channel">▶</a>
+      <a href="mailto:hello@catandme.com" aria-label="Email Cat and Me">@</a>
+      <a href="https://instagram.com/" target="_blank" aria-label="Instagram page">◎</a>
+    </div>
+  </nav>
+</header>
+
+<nav class="crumbs">
+  <a href="cat_article_index.html">Home</a> &nbsp;/&nbsp;
+  <a href="cat_article_index.html#food">Food &amp; Nutrition</a> &nbsp;/&nbsp;
+  <span>Why Cats Need Meat</span>
+</nav>
+
+<header class="article-head">
+  <div class="tagline">Food &amp; Nutrition</div>
+  <h1>Why Cats Need Meat</h1>
+  <p class="standfirst">Unlike dogs — and unlike us — cats can’t thrive on a plant-based diet. They are “obligate carnivores,” and their bodies are wired to get key nutrients only from animal tissue. Here’s the science, in plain English.</p>
+  <div class="meta">
+    <div>⏱️ <b>8 min</b> read</div>
+    <div>Updated <b>7 July 2026</b></div>
+    <div>First published <b>6 July 2026</b></div>
+    <div>Reviewed for <b>Cat&amp;Me Nutrition</b></div>
+  </div>
+</header>
+
+<figure class="hero-img">
+  <img src="https://images.unsplash.com/photo-1561948955-570b270e7c36?auto=format&fit=crop&w=1400&q=85" alt="A cat looking upward">
+  <figcaption>From taurine to vitamin A, cats depend on nutrients that are naturally found in meat.</figcaption>
+</figure>
+
+<div class="layout">
+  <article class="content">
+    <p class="lead-para">The phrase “obligate carnivore” means a cat is <em>obliged</em> to eat meat. It isn’t a preference or a lifestyle choice — it’s biology. Over millions of years as hunters, cats evolved to run their bodies on animal protein and fat, and they lost the ability to make several nutrients that other animals produce for themselves.</p>
+
+    <div class="callout note">
+      <p class="c-title">💡 The short version</p>
+      <p>Cats need animal-based protein and specific nutrients — <strong>taurine, arachidonic acid, preformed vitamin A and enough of certain amino acids</strong> — that are found in meat, not plants. A complete cat food is built around this.</p>
+    </div>
+
+    <hr class="divider">
+
+    <h2 id="protein">Built to run on protein</h2>
+    <p>Cats use protein not just for building and repairing the body, but as a core energy source — much more so than dogs or humans. Their metabolism is set to break down protein continuously, even when dietary protein is scarce. That’s why cat food is protein-rich, and why a low-protein or plant-only diet can leave a cat malnourished even if their tummy is full.</p>
+    <p>They also have little use for large amounts of carbohydrate. Cats can digest some carbs, but their bodies are simply not designed to rely on them the way omnivores do.</p>
+
+    <hr class="divider">
+
+    <h2 id="nutrients">The nutrients cats can only get from animals</h2>
+
+    <div class="disease">
+      <h3>Taurine</h3>
+      <p class="sym">An essential amino acid cats can barely make themselves. It’s found in animal tissue and is vital for the <b>heart, vision, digestion and reproduction</b>. A long-term taurine deficiency can cause <b>retinal degeneration (blindness)</b> and a serious heart condition called <b>dilated cardiomyopathy</b> — which is why every complete cat food is supplemented with it.</p>
+    </div>
+
+    <div class="disease">
+      <h3>Arachidonic acid</h3>
+      <p class="sym">An essential fatty acid that cats can’t produce in adequate amounts. It supports skin, coat, and healthy inflammation responses. It occurs in animal fats — not in plant oils.</p>
+    </div>
+
+    <div class="disease">
+      <h3>Preformed vitamin A</h3>
+      <p class="sym">People and dogs can convert beta-carotene from plants into vitamin A. Cats can’t do this efficiently, so they need the ready-made (“preformed”) vitamin A found in animal sources like liver.</p>
+    </div>
+
+    <div class="disease">
+      <h3>Other key nutrients</h3>
+      <p class="sym">Cats also depend on animal sources for enough of the amino acids <b>arginine</b> (critical for clearing waste from the body) and <b>methionine/cysteine</b>, plus <b>vitamin B12</b> and <b>niacin</b>. Their bodies simply aren’t built to synthesise these from plants.</p>
+    </div>
+
+    <hr class="divider">
+
+    <h2 id="vegan">What about vegetarian or vegan diets?</h2>
+    <p>Because of everything above, plant-only diets are risky for cats and can lead to serious deficiencies. This is a key difference from dogs, which are more flexible omnivores. If you ever have ethical or medical reasons to alter your cat’s diet, do it only under the guidance of a veterinary nutritionist who can ensure every essential nutrient is covered.</p>
+    <div class="callout warn">
+      <p class="c-title">⚠️ Don’t DIY a meat-free (or homemade) cat diet</p>
+      <p>Getting feline nutrition wrong causes real harm — from taurine-related blindness and heart disease to dangerous deficiencies. Complete, balanced commercial foods are formulated to prevent exactly this.</p>
+    </div>
+
+    <hr class="divider">
+
+    <h2 id="choose">What this means for the bowl</h2>
+    <p>You don’t need to feed raw or hunt for exotic meats — you just need a properly formulated food built around animal protein.</p>
+    <ul>
+      <li>Choose foods labelled <strong>“complete and balanced”</strong> for your cat’s life stage — this guarantees taurine and the other essentials.</li>
+      <li>Look for a named animal protein (chicken, turkey, fish, etc.) as a main ingredient.</li>
+      <li>Don’t rely on human meat scraps as a full diet — plain cooked meat is fine as an occasional treat, but it isn’t complete on its own.</li>
+      <li>Avoid raw feeding unless supervised by your vet, due to bacteria and balance risks.</li>
+    </ul>
+
+    <table class="symptoms">
+      <thead><tr><th>Nutrient</th><th>Why it matters</th><th>Source</th></tr></thead>
+      <tbody>
+        <tr><td>Taurine</td><td>Heart, vision, digestion</td><td>Animal tissue</td></tr>
+        <tr><td>Arachidonic acid</td><td>Skin &amp; coat, inflammation</td><td>Animal fat</td></tr>
+        <tr><td>Vitamin A (preformed)</td><td>Vision, immunity, growth</td><td>Liver / animal sources</td></tr>
+        <tr><td>Arginine</td><td>Clearing ammonia from the body</td><td>Meat protein</td></tr>
+      </tbody>
+    </table>
+
+    <div class="callout tip">
+      <p class="c-title">✓ The takeaway</p>
+      <p>Cats are true carnivores by design. Feed a complete, balanced, animal-protein-based food and you’ll cover the nutrients — like taurine — that their bodies can’t make. When in doubt, ask your vet for a recommendation.</p>
+    </div>
+  </article>
+
+  <aside class="sidebar">
+    <div class="toc">
+      <h4>In this article</h4>
+      <ol>
+        <li><a href="#protein">Built for protein</a></li>
+        <li><a href="#nutrients">Meat-only nutrients</a></li>
+        <li><a href="#vegan">Veggie/vegan diets?</a></li>
+        <li><a href="#choose">What to feed</a></li>
+      </ol>
+    </div>
+    <div class="share-card">
+      <h4>Share this article</h4>
+      <div class="share-row">
+        <a href="mailto:?subject=Why%20Cats%20Need%20Meat">Email</a>
+        <a href="https://www.facebook.com/sharer/sharer.php" target="_blank">Facebook</a>
+        <a href="https://api.whatsapp.com/send" target="_blank">WhatsApp</a>
+        <a href="https://www.linkedin.com/sharing/share-offsite/" target="_blank">LinkedIn</a>
+      </div>
+    </div>
+    <div class="mini-cta">
+      <strong>Wet, dry or both?</strong>
+      <p>Now you know what’s in the bowl, choose the right format.</p>
+      <a href="article-wet-vs-dry-food.html">Read: Wet food vs dry food</a>
+    </div>
+  </aside>
+</div>
+
+<section class="related">
+  <h2>Keep reading</h2>
+  <div class="related-grid">
+    <a class="rel-card" href="article-wet-vs-dry-food.html">
+      <img src="https://images.unsplash.com/photo-1601758228041-f3b2795255f1?auto=format&fit=crop&w=800&q=80" alt="Cat eating from a bowl">
+      <div class="rc-body"><h4>Wet Food vs Dry Food</h4><p>Moisture, calories, dental myths and cost compared.</p></div>
+    </a>
+    <a class="rel-card" href="article-how-much-to-feed.html">
+      <img src="https://images.unsplash.com/photo-1608848461950-0fe51dfc41cb?auto=format&fit=crop&w=800&q=80" alt="Cat by a food bowl">
+      <div class="rc-body"><h4>How Much Should Cats Eat?</h4><p>Portion and calorie guidance by weight and age.</p></div>
+    </a>
+    <a class="rel-card" href="article-foods-cats-must-avoid.html">
+      <img src="https://images.unsplash.com/photo-1526336024174-e58f5cdd8e13?auto=format&fit=crop&w=800&q=80" alt="Cat near food">
+      <div class="rc-body"><h4>Foods Cats Must Avoid</h4><p>The everyday human foods that are toxic to cats.</p></div>
+    </a>
+  </div>
+</section>
+
+<section class="disclaimer">
+  <div class="box">ℹ️ <strong>Please note:</strong> This article is for general educational purposes only and does not replace professional veterinary advice. For special diets, consult your vet or a veterinary nutritionist.</div>
+</section>
+
+<section class="follow">
+  <div class="box">
+    <h4>Follow Cat&amp;Me for more cat-care tips</h4>
+    <div class="social">
+      <a href="https://facebook.com/" target="_blank" aria-label="Facebook page">f</a>
+      <a href="https://youtube.com/" target="_blank" aria-label="YouTube channel">▶</a>
+      <a href="mailto:hello@catandme.com" aria-label="Email Cat and Me">@</a>
+      <a href="https://instagram.com/" target="_blank" aria-label="Instagram page">◎</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">© 2026 Cat&amp;Me. Educational cat-care content only — contact a qualified vet for medical concerns.</footer>
+</body>
+</html>
