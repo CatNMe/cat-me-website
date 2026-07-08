@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cat&Me | Cat Advice Articles</title>
+    <style>
+        :root {
+            --ink: #24211f;
+            --muted: #6f6760;
+            --paper: #fffaf4;
+            --cream: #f5eadc;
+            --orange: #d77a35;
+            --teal: #3f918b;
+            --line: #eadccb;
+            --card: #fff;
+            --dark: #243b39
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: var(--paper);
+            color: var(--ink);
+            line-height: 1.55
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit
+        }
+
+        .topbar {
+            background: #fff;
+            border-bottom: 1px solid var(--line);
+            position: sticky;
+            top: 0;
+            z-index: 5
+        }
+
+        .nav {
+            max-width: 1180px;
+            margin: auto;
+            padding: 14px 26px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 22px
+        }
+
+        .brand {
+            font-size: 28px;
+            font-weight: 900;
+            color: var(--orange);
+            letter-spacing: -.5px
+        }
+
+        .navlinks {
+            display: flex;
+            gap: 22px;
+            font-size: 15px;
+            color: var(--muted)
+        }
+
+        .social {
+            display: flex;
+            gap: 9px
+        }
+
+        .social a {
+            width: 38px;
+            height: 38px;
+            border: 1px solid var(--line);
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            background: #fff;
+            color: var(--teal);
+            font-weight: 800
+        }
+
+        .social a:hover {
+            background: #fff3e8;
+            color: var(--orange)
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #fff7eb 0%, #f3e8d8 52%, #ecf7f5 100%);
+            border-bottom: 1px solid var(--line)
+        }
+
+        .hero-inner {
+            max-width: 1180px;
+            margin: auto;
+            padding: 66px 26px 58px;
+            display: grid;
+            grid-template-columns: 1.05fr .95fr;
+            gap: 44px;
+            align-items: center
+        }
+
+        .eyebrow {
+            color: var(--teal);
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: .12em;
+            font-size: 13px
+        }
+
+        h1 {
+            font-size: 58px;
+            line-height: 1.02;
+            margin: 12px 0 18px;
+            letter-spacing: -2px
+        }
+
+        .lead {
+            font-size: 19px;
+            color: var(--muted);
+            max-width: 650px
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-top: 26px
+        }
+
+        .btn {
+            padding: 13px 18px;
+            border-radius: 12px;
+            font-weight: 800;
+            border: 1px solid var(--line)
+        }
+
+        .btn.primary {
+            background: var(--orange);
+            color: #fff;
+            border-color: var(--orange)
+        }
+
+        .btn.secondary {
+            background: #fff;
+            color: var(--dark)
+        }
+
+        .hero-photo {
+            position: relative
+        }
+
+        .hero-photo img {
+            width: 100%;
+            height: 430px;
+            object-fit: cover;
+            border-radius: 28px;
+            box-shadow: 0 18px 45px rgba(78, 55, 29, .18);
+            border: 8px solid #fff
+        }
+
+        .photo-note {
+            position: absolute;
+            left: 22px;
+            bottom: 22px;
+            background: rgba(255, 255, 255, .92);
+            border-radius: 18px;
+            padding: 16px 18px;
+            max-width: 310px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, .12)
+        }
+
+        .photo-note strong {
+            display: block;
+            color: var(--orange);
+            font-size: 20px
+        }
+
+        .wrap {
+            max-width: 1180px;
+            margin: auto;
+            padding: 46px 26px
+        }
+
+        .intro {
+            display: flex;
+            justify-content: space-between;
+            gap: 24px;
+            align-items: end;
+            margin-bottom: 24px
+        }
+
+        .intro h2 {
+            font-size: 36px;
+            margin: 0
+        }
+
+        .intro p {
+            color: var(--muted);
+            margin: 0;
+            max-width: 540px
+        }
+
+        .searchbox {
+            margin: 0 0 34px;
+            display: flex;
+            gap: 12px
+        }
+
+        .searchbox input {
+            width: 100%;
+            padding: 16px 18px;
+            border: 1px solid var(--line);
+            border-radius: 14px;
+            font-size: 16px;
+            background: #fff
+        }
+
+        .searchbox button {
+            border: 0;
+            background: var(--orange);
+            color: #fff;
+            border-radius: 14px;
+            padding: 0 24px;
+            font-weight: 800
+        }
+
+        .category {
+            margin-bottom: 38px;
+            background: var(--card);
+            border: 1px solid var(--line);
+            border-radius: 24px;
+            overflow: hidden
+        }
+
+        .cat-head {
+            display: grid;
+            grid-template-columns: 72px 1fr auto;
+            gap: 18px;
+            align-items: center;
+            padding: 24px 26px;
+            background: #fffaf3
+        }
+
+        .badge {
+            width: 58px;
+            height: 58px;
+            border-radius: 18px;
+            background: #f6e2cc;
+            display: grid;
+            place-items: center;
+            font-size: 28px
+        }
+
+        .cat-head h3 {
+            font-size: 26px;
+            margin: 0 0 5px
+        }
+
+        .cat-head p {
+            margin: 0;
+            color: var(--muted)
+        }
+
+        .count {
+            font-size: 14px;
+            color: var(--teal);
+            font-weight: 900;
+            background: #e7f4f2;
+            padding: 8px 12px;
+            border-radius: 99px
+        }
+
+        .articles {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0;
+            border-top: 1px solid var(--line)
+        }
+
+        .article {
+            padding: 18px;
+            border-right: 1px solid var(--line);
+            border-bottom: 1px solid var(--line);
+            background: #fff;
+            transition: .2s
+        }
+
+        .article:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 24px rgba(83, 55, 25, .08);
+            z-index: 1
+        }
+
+        .article:nth-child(4n) {
+            border-right: 0
+        }
+
+        .article img {
+            width: 100%;
+            height: 178px;
+            object-fit: cover;
+            border-radius: 16px;
+            margin-bottom: 14px;
+            background: #eee
+        }
+
+        .article h4 {
+            margin: 0 0 8px;
+            font-size: 17px;
+            line-height: 1.25
+        }
+
+        .article p {
+            margin: 0;
+            color: var(--muted);
+            font-size: 14px
+        }
+
+        .feature-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 18px;
+            margin: 14px 0 40px
+        }
+
+        .mini {
+            background: #fff;
+            border: 1px solid var(--line);
+            border-radius: 20px;
+            padding: 22px
+        }
+
+        .mini strong {
+            display: block;
+            color: var(--orange);
+            font-size: 24px
+        }
+
+        .az {
+            background: var(--dark);
+            color: #fff;
+            margin-top: 48px;
+            border-radius: 24px;
+            padding: 34px
+        }
+
+        .az p {
+            color: rgba(255, 255, 255, .76)
+        }
+
+        .letters {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 18px
+        }
+
+        .letters span {
+            width: 36px;
+            height: 36px;
+            border: 1px solid rgba(255, 255, 255, .25);
+            border-radius: 10px;
+            display: grid;
+            place-items: center
+        }
+
+        .footer {
+            padding: 34px 28px;
+            text-align: center;
+            color: var(--muted);
+            border-top: 1px solid var(--line);
+            background: #fff
+        }
+
+        @media(max-width:980px) {
+            .articles {
+                grid-template-columns: repeat(2, 1fr)
+            }
+
+            .article:nth-child(4n) {
+                border-right: 1px solid var(--line)
+            }
+
+            .article:nth-child(2n) {
+                border-right: 0
+            }
+
+            .hero-inner {
+                grid-template-columns: 1fr
+            }
+
+            .hero-photo img {
+                height: 360px
+            }
+
+            .feature-row {
+                grid-template-columns: 1fr
+            }
+        }
+
+        @media(max-width:680px) {
+            .nav {
+                flex-wrap: wrap
+            }
+
+            .navlinks {
+                display: none
+            }
+
+            .hero-inner {
+                padding: 42px 20px
+            }
+
+            .wrap {
+                padding: 34px 20px
+            }
+
+            h1 {
+                font-size: 42px
+            }
+
+            .intro {
+                display: block
+            }
+
+            .cat-head {
+                grid-template-columns: 58px 1fr
+            }
+
+            .count {
+                grid-column: 2
+            }
+
+            .articles {
+                grid-template-columns: 1fr
+            }
+
+            .article,
+            .article:nth-child(2n),
+            .article:nth-child(4n) {
+                border-right: 0
+            }
+
+            .article img {
+                height: 210px
+            }
+
+            .searchbox {
+                flex-direction: column
+            }
+
+            .searchbox button {
+                height: 48px
+            }
+
+            .hero-photo img {
+                height: 310px
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="topbar">
+        <nav class="nav">
+            <div class="brand">Cat&amp;Me</div>
+            <div class="navlinks"><a href="#categories">Categories</a><a href="#health">Health</a><a
+                    href="#food">Food</a><a href="#az">A-Z</a></div>
+            <div class="social"><a href="https://www.facebook.com/profile.php?id=61590709854729" target="_blank" aria-label="Facebook page">f</a><a
+                    href="https://youtube.com/" target="_blank" aria-label="YouTube channel">▶</a><a
+                    href="mailto:hello@catandme.com" aria-label="Email Cat and Me">@</a><a href="https://instagram.com/"
+                    target="_blank" aria-label="Instagram page">◎</a></div>
+        </nav>
+    </header>
+    <section class="hero">
+        <div class="hero-inner">
+            <div>
+                <div class="eyebrow">For curious cat people</div>
+                <h1>Helpful cat articles for everyday life with your cat.</h1>
+                <p class="lead">Cat&amp;Me is a warm, easy-to-read cat advice library for owners who want practical
+                    answers before small problems become big ones — from feeding and litter boxes to behaviour, safety,
+                    kittens, and senior-cat care.</p>
+                <div class="hero-actions"><a class="btn primary" href="#categories">Browse categories</a><a
+                        class="btn secondary" href="mailto:hello@catandme.com">Ask a topic idea</a></div>
+            </div>
+            <div class="hero-photo"><img
+                    src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=1200&q=85"
+                    alt="Tabby cat looking at the camera">
+                <div class="photo-note"><strong>36 starter articles</strong><span>Organised into clear topics so
+                        visitors can find advice fast.</span></div>
+            </div>
+        </div>
+    </section>
+    <main id="categories" class="wrap">
+        <div class="intro">
+            <div>
+                <div class="eyebrow">Cat&amp;Me article library</div>
+                <h2>Explore by category</h2>
+            </div>
+            <p>Each card uses a real cat photo and a specific article summary, so the homepage feels like a real
+                pet-care website rather than a plain template.</p>
+        </div>
+        <div class="feature-row">
+            <div class="mini"><strong>Health first</strong>Illness signs, vet care, ageing cats, and prevention topics
+                written in simple language.</div>
+            <div class="mini"><strong>Home focused</strong>Guides for feeding, grooming, litter trays, indoor play,
+                plants, and safe spaces.</div>
+            <div class="mini"><strong>Beginner friendly</strong>Short article summaries help new cat owners choose what
+                to read next.</div>
+        </div>
+        <div class="searchbox"><input
+                placeholder="Search articles, e.g. vomiting, kitten food, scratching, toxic plants..."><button>Search</button>
+        </div>
+        <section id="health" class="category">
+            <div class="cat-head">
+                <div class="badge">🩺</div>
+                <div>
+                    <h3>Cat Health & Wellness</h3>
+                    <p>Health signs, common conditions, prevention, and when to contact a vet.</p>
+                </div>
+                <div class="count">4 articles</div>
+            </div>
+            <div class="articles">
+                <a class="article" href="article-10-signs-cat-sick.html">
+  <img src="https://images.unsplash.com/photo-1574144611937-0df059b5ef3e?auto=format&fit=crop&w=900&q=80"
+       alt="Real cat photo for 10 Signs Your Cat May Be Sick">
+  <h4>10 Signs Your Cat May Be Sick</h4>
+  <p>Learn the quiet warning signs: hiding, appetite changes, litter box changes, breathing changes, and unusual tiredness.</p>
+</a>
+                <a class="article" href="article-common-cat-diseases.html">
+                       <img src="https://images.unsplash.com/photo-1592194996308-7b43878e84a6?auto=format&fit=crop&w=900&q=80"
+                        alt="Real cat photo for Common Cat Diseases Explained">
+                    <h4>Common Cat Diseases Explained</h4>
+                    <p>A plain-English guide to problems such as dental disease, kidney disease, diabetes, parasites,
+                        and respiratory infections.</p>
+                </a>
+               <a class="article" href="article-why-cat-vomiting.html">
+                        <img src="https://images.unsplash.com/photo-1543852786-1cf6624b9987?auto=format&fit=crop&w=900&q=80"
+                        alt="Real cat photo for Why Is My Cat Vomiting?">
+                    <h4>Why Is My Cat Vomiting?</h4>
+                    <p>Understand when vomiting may be a hairball, fast eating, diet sensitivity, or a reason to call
+                        your vet.</p>
+                </a>
+                <a class="article" href="article-senior-cat-checklist.html">
+                        <img src="https://images.unsplash.com/photo-1519052537078-e6302a4968d4?auto=format&fit=crop&w=900&q=80"
+                        alt="Real cat photo for Senior Cat Health Checklist">
+                    <h4>Senior Cat Health Checklist</h4>
+                    <p>A practical care list for older cats: weight checks, mobility support, hydration, grooming, and
+                        vet visits.</p>
+                </a>
+            </div>
+        </section>
+        <section id="food" class="category">
+            <div class="cat-head">
+                <div class="badge">🥣</div>
+                <div>
+                    <h3>Food & Nutrition</h3>
+                    <p>Balanced feeding, safe foods, treats, portions, and hydration.</p>
+                </div>
+                <div class="count">4 articles</div>
+            </div>
+            <div class="articles">
+                <a class="article" href="article-wet-vs-dry-food.html">
+                       <img src="https://images.unsplash.com/photo-1601758228041-f3b2795255f1?auto=format&fit=crop&w=900&q=80"
+                        alt="Real cat photo for Wet Food vs Dry Food">
+                    <h4>Wet Food vs Dry Food</h4>
+                    <p>Compare moisture, convenience, calories, dental myths, and how to choose a complete balanced
+                        food.</p>
+                </a>
+                <a class="article" href="article-foods-cats-must-avoid.html">
+                       <img src="https://images.unsplash.com/photo-1526336024174-e58f5cdd8e13?auto=format&fit=crop&w=900&q=80"
+                        alt="Real cat photo for Foods Cats Must Avoid">
+                    <h4>Foods Cats Must Avoid</h4>
+                    <p>Keep cats away from onions, garlic, chocolate, alcohol, caffeine, grapes, raisins, and unsafe
+                        leftovers.</p>
+                </a>
+                <a class="article" href="article-why-cats-need-meat.html">
+                       <img src="https://images.unsplash.com/photo-1561948955-570b270e7c36?auto=format&fit=crop&w=900&q=80"
+                        alt="Real cat photo for Why Cats Need Meat">
+                    <h4>Why Cats Need Meat</h4>
+                    <p>Cats are obligate carnivores, so their bodies need animal protein and nutrients like taurine.</p>
+                </a>
+                <a class="article" href="article-how-much-to-feed.html">
+                      <img  src="https://images.unsplash.com/photo-1608848461950-0fe51dfc41cb?auto=format&fit=crop&w=900&q=80"
+                        alt="Real cat photo for How Much Should Cats Eat?">
+                    <h4>How Much Should Cats Eat?</h4>
+                    <p>Simple feeding guidance based on age, weight, activity level, neuter status, and food calories.
+                    </p>
+                </a>
+            </div>
+        </section>
+        <section id="" class="category">
+            <div class="cat-head">
+                <div class="badge">😺</div>
+                <div>
+                    <h3>Behaviour & Body Language</h3>
+                    <p>Understand what your cat may be saying through posture, sound, and habits.</p>
+                </div>
+                <div class="count">4 articles</div>
+            </div>
+            <div class="articles">
+                <a class="article" href="article-why-cats-purr.html">
+                      <img  src="https://images.unsplash.com/photo-1518791841217-8f162f1e1131?auto=format&fit=crop&w=900&q=80"
+                        alt="Real cat photo for Why Do Cats Purr?">
+                    <h4>Why Do Cats Purr?</h4>
+                    <p>Purring can mean contentment, communication, self-soothing, stress, or discomfort depending on
+                        context.</p>
+                </a>
+                <a class="article" href="article-why-cats-like-boxes.html">
+                       <img src="https://images.unsplash.com/photo-1511044568932-338cba0ad803?auto=format&fit=crop&w=900&q=80"
+                        alt="Real cat photo for Why Cats Like Boxes">
+                    <h4>Why Cats Like Boxes</h4>
+                    <p>Boxes feel warm, private, and secure — perfect for a small predator that also likes hiding.</p>
+                </a>
+                <a class="article" href="article-signs-cat-trusts-you.html">
+                       <img src="https://images.unsplash.com/photo-1494256997604-768d1f608cac?auto=format&fit=crop&w=900&q=80"
+                        alt="Real cat photo for Signs Your Cat Trusts You">
+                    <h4>Signs Your Cat Trusts You</h4>
+                    <p>Slow blinks, relaxed sleeping nearby, soft body posture, and gentle head bunting can show trust.
+                    </p>
+                </a>
+                <a class="article" href="article-understanding-cat-tails.html">
+                       <img src="https://images.unsplash.com/photo-1533738363-b7f9aef128ce?auto=format&fit=crop&w=900&q=80"
+                        alt="Real cat photo for Understanding Cat Tails">
+                    <h4>Understanding Cat Tails</h4>
+                    <p>Tail position, speed, and stiffness can reveal confidence, irritation, fear, or curiosity.</p>
+                </a>
+            </div>
+        </section>
+        <section id="" class="category">
+            <div class="cat-head">
+                <div class="badge">🧸</div>
+                <div>
+                    <h3>Kitten Care</h3>
+                    <p>First weeks at home, early training, feeding, safety, and social confidence.</p>
+                </div>
+                <div class="count">4 articles</div>
+            </div>
+            <div class="articles">
+                <a class="article" href="article-preparing-for-a-kitten.html">
+                      <img  src="https://images.unsplash.com/photo-1595433707802-6b2626ef1c91?auto=format&fit=crop&w=900&q=80"
+                        alt="Real cat photo for Preparing for a Kitten">
+                    <h4>Preparing for a Kitten</h4>
+                    <p>Set up a quiet room, safe bed, shallow litter tray, kitten food, toys, and scratcher before
+                        arrival.</p>
+                </a>
+                <a class="article" href="article-litter-training-kitten.html">
+                       <img src="https://images.unsplash.com/photo-1573865526739-10659fec78a5?auto=format&fit=crop&w=900&q=80"
+                        alt="Real cat photo for Litter Training a Kitten">
+                    <h4>Litter Training a Kitten</h4>
+                    <p>Make toileting easy with low-sided trays, calm placement, clean litter, and positive routines.
+                    </p>
+                </a>
+                <a class="article" href="article-what-to-feed-kitten.html">
+                      <img  src="https://images.unsplash.com/photo-1571566882372-1598d88abd90?auto=format&fit=crop&w=900&q=80"
+                        alt="Real cat photo for What to Feed a Kitten">
+                    <h4>What to Feed a Kitten</h4>
+                    <p>Growing kittens need energy-dense complete kitten food, frequent meals, and fresh water every
+                        day.</p>
+                </a>
+               <a class="article" href="article-introducing-kitten-to-pets.html">
+                      <img  src="https://images.unsplash.com/photo-1545249390-6bdfa286032f?auto=format&fit=crop&w=900&q=80"
+                        alt="Real cat photo for Introducing a Kitten to Pets">
+                    <h4>Introducing a Kitten to Pets</h4>
+                    <p>Use scent swapping, barriers, short supervised meetings, and patience to avoid overwhelming the
+                        kitten.</p>
+                </a>
+            </div>
+        </section>
+        <section id="" class="category">
+            <div class="cat-head">
+                <div class="badge">🏠</div>
+                <div>
+                    <h3>Indoor Life & Enrichment</h3>
+                    <p>Simple ways to make indoor life active, secure, and interesting.</p>
+                </div>
+                <div class="count">4 articles</div>
+            </div>
+            <div class="articles">
+                <a class="article" href="article-keep-indoor-cats-happy.html">
+                       <img src="https://images.unsplash.com/photo-1548366086-7f1b76106622?auto=format&fit=crop&w=900&q=80"
+                        alt="Real cat photo for How to Keep Indoor Cats Happy">
+                    <h4>How to Keep Indoor Cats Happy</h4>
+                    <p>Build a richer indoor world with climbing shelves, window views, daily play, puzzle feeders, and
+                        hiding places.</p>
+               </a>
+                <a class="article" href="article-best-toys-indoor-cats.html">
+                       <img src="https://images.unsplash.com/photo-1547955922-26be0c1600c4?auto=format&fit=crop&w=900&q=80"
+                        alt="Real cat photo for Best Toys for Indoor Cats">
+                    <h4>Best Toys for Indoor Cats</h4>
+                    <p>Choose toys that copy hunting: wand toys, balls, tunnels, kickers, and food puzzles.</p>
+                 </a>
+                <a class="article" href="article-why-cats-need-scratching-posts.html">
+                     <img   src="https://images.unsplash.com/photo-1583083527882-4bee9aba2eea?auto=format&fit=crop&w=900&q=80"
+                        alt="Real cat photo for Why Cats Need Scratching Posts">
+                    <h4>Why Cats Need Scratching Posts</h4>
+                    <p>Scratching stretches muscles, maintains claws, relieves stress, and leaves scent marks.</p>
+                </a>
+                <a class="article" href="article-signs-cat-is-bored.html">
+                       <img src="https://images.unsplash.com/photo-1501820488136-72669149e0d4?auto=format&fit=crop&w=900&q=80"
+                        alt="Real cat photo for Signs Your Cat Is Bored">
+                    <h4>Signs Your Cat Is Bored</h4>
+                    <p>Over-sleeping, overeating, destructive scratching, attention-seeking, or night zoomies may mean
+                        more enrichment is needed.</p>
+                </a>
+            </div>
+        </section>
+        <section id="" class="category">
+            <div class="cat-head">
+                <div class="badge">🌿</div>
+                <div>
+                    <h3>Cat Safety</h3>
+                    <p>Home hazards, outdoor risks, travel, plants, weather, and identification.</p>
+                </div>
+                <div class="count">4 articles</div>
+            </div>
+            <div class="articles">
+                <a class="article" href="article-toxic-houseplants-for-cats.html">
+                      <img  src="https://images.unsplash.com/photo-1533743983669-94fa5c4338ec?auto=format&fit=crop&w=900&q=80"
+                        alt="Real cat photo for Toxic Houseplants for Cats">
+                    <h4>Toxic Houseplants for Cats</h4>
+                    <p>Know risky plants including lilies, pothos, philodendron, aloe, sago palm, and some cut flowers.
+                    </p>
+                </a>
+                <a class="article" href="article-cat-proof-your-home.html">
+                      <img  src="https://images.unsplash.com/photo-1491485880348-85d48a9e5312?auto=format&fit=crop&w=900&q=80"
+                        alt="Real cat photo for How to Cat-Proof Your Home">
+                    <h4>How to Cat-Proof Your Home</h4>
+                    <p>Check windows, balconies, cleaning products, wires, string, small objects, hot appliances, and
+                        bins.</p>
+                </a>
+               <a class="article" href="article-indoor-vs-outdoor-cats.html">
+                       <img src="https://images.unsplash.com/photo-1506755855567-92ff770e8d00?auto=format&fit=crop&w=900&q=80"
+                        alt="Real cat photo for Indoor vs Outdoor Cats">
+                    <h4>Indoor vs Outdoor Cats</h4>
+                    <p>Compare safety, exercise, enrichment, disease risk, traffic danger, wildlife impact, and secure
+                        outdoor options.</p>
+                </a>
+                <a class="article" href="article-travelling-safely-with-cats.html">
+                      <img  src="https://images.unsplash.com/photo-1570018144715-43110363d70a?auto=format&fit=crop&w=900&q=80"
+                        alt="Real cat photo for Travelling Safely with Cats">
+                    <h4>Travelling Safely with Cats</h4>
+                    <p>Use a secure carrier, familiar bedding, microchip details, calm handling, and vet advice for
+                        longer trips.</p>
+                </a>
+            </div>
+        </section>
+        <section id="" class="category">
+            <div class="cat-head">
+                <div class="badge">🧼</div>
+                <div>
+                    <h3>Everyday Cat Care</h3>
+                    <p>Grooming, litter trays, nail care, teeth, routines, and comfort.</p>
+                </div>
+                <div class="count">4 articles</div>
+            </div>
+            <div class="articles">
+                <a class="article" href="article-how-to-groom-a-cat.html">
+                      <img  src="https://images.unsplash.com/photo-1529778873920-4da4926a72c2?auto=format&fit=crop&w=900&q=80"
+                        alt="Real cat photo for How to Groom a Cat">
+                    <h4>How to Groom a Cat</h4>
+                    <p>Brush by coat type, check for mats, keep sessions short, and reward calm behaviour.</p>
+                </a>
+                 <a class="article" href="article-best-litter-box-setup.html">
+                      <img  src="https://images.unsplash.com/photo-1513360371669-4adf3dd7dff8?auto=format&fit=crop&w=900&q=80"
+                        alt="Real cat photo for Best Litter Box Setup">
+                    <h4>Best Litter Box Setup</h4>
+                    <p>Use enough trays, quiet locations, suitable litter depth, and daily scooping to prevent stress.
+                    </p>
+                </a>
+                <a class="article" href="article-how-to-trim-cat-nails.html">
+                      <img  src="https://images.unsplash.com/photo-1570824104453-508955ab713e?auto=format&fit=crop&w=900&q=80"
+                        alt="Real cat photo for How to Trim Cat Nails">
+                    <h4>How to Trim Cat Nails</h4>
+                    <p>Trim only the sharp tip, avoid the quick, go slowly, and stop before your cat gets stressed.</p>
+                </a>
+               <a class="article" href="article-daily-cat-care-checklist.html">
+                      <img  src="https://images.unsplash.com/photo-1520315342629-6ea920342047?auto=format&fit=crop&w=900&q=80"
+                        alt="Real cat photo for Daily Cat Care Checklist">
+                    <h4>Daily Cat Care Checklist</h4>
+                    <p>A simple routine for feeding, water, litter, play, grooming, health checks, and affection.</p>
+                 </a>
+            </div>
+        </section>
+        <section id="" class="category">
+            <div class="cat-head">
+                <div class="badge">🐈</div>
+                <div>
+                    <h3>Cat Breeds & Traits</h3>
+                    <p>Breed features, personalities, grooming needs, and family suitability.</p>
+                </div>
+                <div class="count">4 articles</div>
+            </div>
+            <div class="articles">
+                  <a class="article" href="article-best-cat-breeds-for-families.html">
+                      <img  src="https://images.unsplash.com/photo-1555685812-4b943f1cb0eb?auto=format&fit=crop&w=900&q=80"
+                        alt="Real cat photo for Best Cat Breeds for Families">
+                    <h4>Best Cat Breeds for Families</h4>
+                    <p>Learn which traits often suit family life, while remembering every cat has an individual
+                        personality.</p>
+                </a>
+                 <a class="article" href="article-maine-coon-facts.html">
+                       <img src="https://images.unsplash.com/photo-1615789591457-74a63395c990?auto=format&fit=crop&w=900&q=80"
+                        alt="Real cat photo for Maine Coon Facts">
+                    <h4>Maine Coon Facts</h4>
+                    <p>A friendly giant known for a thick coat, large body, sociable nature, and playful confidence.</p>
+                </a>
+                <a class="article" href="article-siamese-cat-facts.html">
+                       <img src="https://images.unsplash.com/photo-1513245543132-31f507417b26?auto=format&fit=crop&w=900&q=80"
+                        alt="Real cat photo for Siamese Cat Facts">
+                    <h4>Siamese Cat Facts</h4>
+                    <p>Vocal, social, intelligent cats with colour-point coats and strong bonds with people.</p>
+                </a>
+                <a class="article" href="article-are-cats-hypoallergenic.html">
+                       <img src="https://images.unsplash.com/photo-1596854407944-bf87f6fdd49e?auto=format&fit=crop&w=900&q=80"
+                        alt="Real cat photo for Are Cats Hypoallergenic?">
+                    <h4>Are Cats Hypoallergenic?</h4>
+                    <p>No cat is truly allergen-free, but allergen levels and human reactions can vary.</p>
+                </a>
+            </div>
+        </section>
+        <section id="" class="category">
+            <div class="cat-head">
+                <div class="badge">✨</div>
+                <div>
+                    <h3>Fun Cat Facts</h3>
+                    <p>Interesting facts about cat senses, movement, whiskers, and abilities.</p>
+                </div>
+                <div class="count">4 articles</div>
+            </div>
+            <div class="articles">
+                <a class="article" href="article-why-cats-have-whiskers.html">
+                      <img  src="https://images.unsplash.com/photo-1511694009171-3cdddf4484ff?auto=format&fit=crop&w=900&q=80"
+                        alt="Real cat photo for Why Cats Have Whiskers">
+                    <h4>Why Cats Have Whiskers</h4>
+                    <p>Whiskers help cats sense spaces, air movement, nearby objects, and body position.</p>
+                </a>
+                <a class="article" href="article-why-cat-eyes-glow.html">
+                      <img  src="https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?auto=format&fit=crop&w=900&q=80"
+                        alt="Real cat photo for Why Cat Eyes Glow">
+                    <h4>Why Cat Eyes Glow</h4>
+                    <p>A reflective layer called the tapetum lucidum helps cats use low light more efficiently.</p>
+                </a>
+                 <a class="article" href="article-do-cats-know-their-names.html">
+                      <img  src="https://images.unsplash.com/photo-1518791841217-8f162f1e1131?auto=format&fit=crop&w=900&q=80"
+                        alt="Real cat photo for Do Cats Know Their Names?">
+                    <h4>Do Cats Know Their Names?</h4>
+                    <p>Research suggests many cats can recognise their names, even if they do not always respond.</p>
+                </a>
+               <a class="article" href="article-why-cats-land-on-their-feet.html">
+                       <img src="https://images.unsplash.com/photo-1511275539165-cc46b1ee89bf?auto=format&fit=crop&w=900&q=80"
+                        alt="Real cat photo for Why Cats Land on Their Feet">
+                    <h4>Why Cats Land on Their Feet</h4>
+                    <p>The righting reflex helps cats rotate in the air, but falls can still cause serious injuries.</p>
+                </a>
+            </div>
+        </section>
+        <section id="az" class="az">
+            <h2>Browse A–Z</h2>
+            <p>As the website grows, link every article here alphabetically so readers can quickly find a topic they
+                remember.</p>
+            <div class="letters">
+                <span>A</span><span>B</span><span>C</span><span>D</span><span>E</span><span>F</span><span>G</span><span>H</span><span>I</span><span>J</span><span>K</span><span>L</span><span>M</span><span>N</span><span>O</span><span>P</span><span>Q</span><span>R</span><span>S</span><span>T</span><span>U</span><span>V</span><span>W</span><span>X</span><span>Y</span><span>Z</span>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">© 2026 Cat&amp;Me. Educational cat-care content only — contact a qualified vet for medical
+        concerns.</footer>
+</body>
+
+</html>
