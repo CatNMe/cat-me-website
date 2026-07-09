@@ -205,10 +205,91 @@
             max-width: 540px
         }
 
+        .search-wrap {
+            position: relative;
+            margin: 0 0 34px
+        }
+
         .searchbox {
-            margin: 0 0 34px;
             display: flex;
-            gap: 12px
+            gap: 12px;
+            margin: 0
+        }
+
+        .search-results {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: calc(100% + 8px);
+            background: #fff;
+            border: 1px solid var(--line);
+            border-radius: 16px;
+            box-shadow: 0 16px 40px rgba(78, 55, 29, .16);
+            padding: 8px;
+            z-index: 20;
+            max-height: 440px;
+            overflow: auto
+        }
+
+        .search-results[hidden] {
+            display: none
+        }
+
+        .sr-head {
+            padding: 10px 12px;
+            font-size: 12px;
+            color: var(--muted);
+            text-transform: uppercase;
+            letter-spacing: .06em
+        }
+
+        .sr-empty {
+            padding: 16px;
+            color: var(--muted);
+            font-size: 15px
+        }
+
+        a.sr-item {
+            display: flex;
+            gap: 14px;
+            align-items: flex-start;
+            padding: 12px;
+            border-radius: 12px
+        }
+
+        a.sr-item:hover {
+            background: #fff3e8
+        }
+
+        .sr-item img {
+            width: 56px;
+            height: 56px;
+            object-fit: cover;
+            border-radius: 10px;
+            flex: 0 0 auto;
+            background: #eee
+        }
+
+        .sr-cat {
+            display: block;
+            font-size: 12px;
+            color: var(--teal);
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: .04em
+        }
+
+        .sr-title {
+            font-size: 15px;
+            font-weight: 800;
+            color: var(--ink);
+            margin: 2px 0 0
+        }
+
+        .sr-desc {
+            font-size: 13px;
+            color: var(--muted);
+            margin: 3px 0 0
         }
 
         .searchbox input {
@@ -235,6 +316,12 @@
             border: 1px solid var(--line);
             border-radius: 24px;
             overflow: hidden
+        }
+
+        .category,
+        #categories,
+        #az {
+            scroll-margin-top: 88px
         }
 
         .cat-head {
@@ -471,7 +558,7 @@
             <div class="brand">Cat&amp;Me</div>
             <div class="navlinks"><a href="#categories">Categories</a><a href="#health">Health</a><a
                     href="#food">Food</a><a href="#az">A-Z</a></div>
-            <div class="social"><a href="https://www.facebook.com/profile.php?id=61590709854729" target="_blank" aria-label="Facebook page">f</a><a
+            <div class="social"><a href="https://facebook.com/" target="_blank" aria-label="Facebook page">f</a><a
                     href="https://youtube.com/" target="_blank" aria-label="YouTube channel">▶</a><a
                     href="mailto:hello@catandme.com" aria-label="Email Cat and Me">@</a><a href="https://instagram.com/"
                     target="_blank" aria-label="Instagram page">◎</a></div>
@@ -513,8 +600,11 @@
             <div class="mini"><strong>Beginner friendly</strong>Short article summaries help new cat owners choose what
                 to read next.</div>
         </div>
-        <div class="searchbox"><input
-                placeholder="Search articles, e.g. vomiting, kitten food, scratching, toxic plants..."><button>Search</button>
+        <div class="search-wrap">
+            <div class="searchbox"><input id="searchInput" autocomplete="off"
+                    placeholder="Search articles, e.g. vomiting, kitten food, scratching, toxic plants..."><button
+                    id="searchBtn">Search</button></div>
+            <div id="searchResults" class="search-results" hidden></div>
         </div>
         <section id="health" class="category">
             <div class="cat-head">
@@ -525,35 +615,31 @@
                 </div>
                 <div class="count">4 articles</div>
             </div>
-            <div class="articles">
-                <a class="article" href="article-10-signs-cat-sick.html">
-  <img src="https://images.unsplash.com/photo-1574144611937-0df059b5ef3e?auto=format&fit=crop&w=900&q=80"
-       alt="Real cat photo for 10 Signs Your Cat May Be Sick">
-  <h4>10 Signs Your Cat May Be Sick</h4>
-  <p>Learn the quiet warning signs: hiding, appetite changes, litter box changes, breathing changes, and unusual tiredness.</p>
-</a>
-                <a class="article" href="article-common-cat-diseases.html">
-                       <img src="https://images.unsplash.com/photo-1592194996308-7b43878e84a6?auto=format&fit=crop&w=900&q=80"
+            <div class="articles"><a class="article" href="article-10-signs-cat-sick.html"><img
+                        src="https://images.unsplash.com/photo-1574144611937-0df059b5ef3e?auto=format&fit=crop&w=900&q=80"
+                        alt="Real cat photo for 10 Signs Your Cat May Be Sick">
+                    <h4>10 Signs Your Cat May Be Sick</h4>
+                    <p>Learn the quiet warning signs: hiding, appetite changes, litter box changes, breathing changes,
+                        and unusual tiredness.</p>
+                </a><a class="article" href="article-common-cat-diseases.html"><img
+                        src="https://images.unsplash.com/photo-1592194996308-7b43878e84a6?auto=format&fit=crop&w=900&q=80"
                         alt="Real cat photo for Common Cat Diseases Explained">
                     <h4>Common Cat Diseases Explained</h4>
                     <p>A plain-English guide to problems such as dental disease, kidney disease, diabetes, parasites,
                         and respiratory infections.</p>
-                </a>
-               <a class="article" href="article-why-cat-vomiting.html">
-                        <img src="https://images.unsplash.com/photo-1543852786-1cf6624b9987?auto=format&fit=crop&w=900&q=80"
+                </a><a class="article" href="article-why-cat-vomiting.html"><img
+                        src="https://images.unsplash.com/photo-1543852786-1cf6624b9987?auto=format&fit=crop&w=900&q=80"
                         alt="Real cat photo for Why Is My Cat Vomiting?">
                     <h4>Why Is My Cat Vomiting?</h4>
                     <p>Understand when vomiting may be a hairball, fast eating, diet sensitivity, or a reason to call
                         your vet.</p>
-                </a>
-                <a class="article" href="article-senior-cat-checklist.html">
-                        <img src="https://images.unsplash.com/photo-1519052537078-e6302a4968d4?auto=format&fit=crop&w=900&q=80"
+                </a><a class="article" href="article-senior-cat-checklist.html"><img
+                        src="https://images.unsplash.com/photo-1519052537078-e6302a4968d4?auto=format&fit=crop&w=900&q=80"
                         alt="Real cat photo for Senior Cat Health Checklist">
                     <h4>Senior Cat Health Checklist</h4>
                     <p>A practical care list for older cats: weight checks, mobility support, hydration, grooming, and
                         vet visits.</p>
-                </a>
-            </div>
+                </a></div>
         </section>
         <section id="food" class="category">
             <div class="cat-head">
@@ -564,37 +650,32 @@
                 </div>
                 <div class="count">4 articles</div>
             </div>
-            <div class="articles">
-                <a class="article" href="article-wet-vs-dry-food.html">
-                       <img src="https://images.unsplash.com/photo-1601758228041-f3b2795255f1?auto=format&fit=crop&w=900&q=80"
+            <div class="articles"><a class="article" href="article-wet-vs-dry-food.html"><img
+                        src="https://images.unsplash.com/photo-1601758228041-f3b2795255f1?auto=format&fit=crop&w=900&q=80"
                         alt="Real cat photo for Wet Food vs Dry Food">
                     <h4>Wet Food vs Dry Food</h4>
                     <p>Compare moisture, convenience, calories, dental myths, and how to choose a complete balanced
                         food.</p>
-                </a>
-                <a class="article" href="article-foods-cats-must-avoid.html">
-                       <img src="https://images.unsplash.com/photo-1526336024174-e58f5cdd8e13?auto=format&fit=crop&w=900&q=80"
+                </a><a class="article" href="article-foods-cats-must-avoid.html"><img
+                        src="https://images.unsplash.com/photo-1526336024174-e58f5cdd8e13?auto=format&fit=crop&w=900&q=80"
                         alt="Real cat photo for Foods Cats Must Avoid">
                     <h4>Foods Cats Must Avoid</h4>
                     <p>Keep cats away from onions, garlic, chocolate, alcohol, caffeine, grapes, raisins, and unsafe
                         leftovers.</p>
-                </a>
-                <a class="article" href="article-why-cats-need-meat.html">
-                       <img src="https://images.unsplash.com/photo-1561948955-570b270e7c36?auto=format&fit=crop&w=900&q=80"
+                </a><a class="article" href="article-why-cats-need-meat.html"><img
+                        src="https://images.unsplash.com/photo-1561948955-570b270e7c36?auto=format&fit=crop&w=900&q=80"
                         alt="Real cat photo for Why Cats Need Meat">
                     <h4>Why Cats Need Meat</h4>
                     <p>Cats are obligate carnivores, so their bodies need animal protein and nutrients like taurine.</p>
-                </a>
-                <a class="article" href="article-how-much-to-feed.html">
-                      <img  src="https://images.unsplash.com/photo-1608848461950-0fe51dfc41cb?auto=format&fit=crop&w=900&q=80"
+                </a><a class="article" href="article-how-much-to-feed.html"><img
+                        src="https://images.unsplash.com/photo-1608848461950-0fe51dfc41cb?auto=format&fit=crop&w=900&q=80"
                         alt="Real cat photo for How Much Should Cats Eat?">
                     <h4>How Much Should Cats Eat?</h4>
                     <p>Simple feeding guidance based on age, weight, activity level, neuter status, and food calories.
                     </p>
-                </a>
-            </div>
+                </a></div>
         </section>
-        <section id="" class="category">
+        <section id="behaviour" class="category">
             <div class="cat-head">
                 <div class="badge">😺</div>
                 <div>
@@ -603,36 +684,31 @@
                 </div>
                 <div class="count">4 articles</div>
             </div>
-            <div class="articles">
-                <a class="article" href="article-why-cats-purr.html">
-                      <img  src="https://images.unsplash.com/photo-1518791841217-8f162f1e1131?auto=format&fit=crop&w=900&q=80"
+            <div class="articles"><a class="article" href="article-why-cats-purr.html"><img
+                        src="https://images.unsplash.com/photo-1518791841217-8f162f1e1131?auto=format&fit=crop&w=900&q=80"
                         alt="Real cat photo for Why Do Cats Purr?">
                     <h4>Why Do Cats Purr?</h4>
                     <p>Purring can mean contentment, communication, self-soothing, stress, or discomfort depending on
                         context.</p>
-                </a>
-                <a class="article" href="article-why-cats-like-boxes.html">
-                       <img src="https://images.unsplash.com/photo-1511044568932-338cba0ad803?auto=format&fit=crop&w=900&q=80"
+                </a><a class="article" href="article-why-cats-like-boxes.html"><img
+                        src="https://images.unsplash.com/photo-1511044568932-338cba0ad803?auto=format&fit=crop&w=900&q=80"
                         alt="Real cat photo for Why Cats Like Boxes">
                     <h4>Why Cats Like Boxes</h4>
                     <p>Boxes feel warm, private, and secure — perfect for a small predator that also likes hiding.</p>
-                </a>
-                <a class="article" href="article-signs-cat-trusts-you.html">
-                       <img src="https://images.unsplash.com/photo-1494256997604-768d1f608cac?auto=format&fit=crop&w=900&q=80"
+                </a><a class="article" href="article-signs-cat-trusts-you.html"><img
+                        src="https://images.unsplash.com/photo-1494256997604-768d1f608cac?auto=format&fit=crop&w=900&q=80"
                         alt="Real cat photo for Signs Your Cat Trusts You">
                     <h4>Signs Your Cat Trusts You</h4>
                     <p>Slow blinks, relaxed sleeping nearby, soft body posture, and gentle head bunting can show trust.
                     </p>
-                </a>
-                <a class="article" href="article-understanding-cat-tails.html">
-                       <img src="https://images.unsplash.com/photo-1533738363-b7f9aef128ce?auto=format&fit=crop&w=900&q=80"
+                </a><a class="article" href="article-understanding-cat-tails.html"><img
+                        src="https://images.unsplash.com/photo-1533738363-b7f9aef128ce?auto=format&fit=crop&w=900&q=80"
                         alt="Real cat photo for Understanding Cat Tails">
                     <h4>Understanding Cat Tails</h4>
                     <p>Tail position, speed, and stiffness can reveal confidence, irritation, fear, or curiosity.</p>
-                </a>
-            </div>
+                </a></div>
         </section>
-        <section id="" class="category">
+        <section id="kitten" class="category">
             <div class="cat-head">
                 <div class="badge">🧸</div>
                 <div>
@@ -641,38 +717,33 @@
                 </div>
                 <div class="count">4 articles</div>
             </div>
-            <div class="articles">
-                <a class="article" href="article-preparing-for-a-kitten.html">
-                      <img  src="https://images.unsplash.com/photo-1595433707802-6b2626ef1c91?auto=format&fit=crop&w=900&q=80"
+            <div class="articles"><a class="article" href="article-preparing-for-a-kitten.html"><img
+                        src="https://images.unsplash.com/photo-1595433707802-6b2626ef1c91?auto=format&fit=crop&w=900&q=80"
                         alt="Real cat photo for Preparing for a Kitten">
                     <h4>Preparing for a Kitten</h4>
                     <p>Set up a quiet room, safe bed, shallow litter tray, kitten food, toys, and scratcher before
                         arrival.</p>
-                </a>
-                <a class="article" href="article-litter-training-kitten.html">
-                       <img src="https://images.unsplash.com/photo-1573865526739-10659fec78a5?auto=format&fit=crop&w=900&q=80"
+                </a><a class="article" href="article-litter-training-kitten.html"><img
+                        src="https://images.unsplash.com/photo-1573865526739-10659fec78a5?auto=format&fit=crop&w=900&q=80"
                         alt="Real cat photo for Litter Training a Kitten">
                     <h4>Litter Training a Kitten</h4>
                     <p>Make toileting easy with low-sided trays, calm placement, clean litter, and positive routines.
                     </p>
-                </a>
-                <a class="article" href="article-what-to-feed-kitten.html">
-                      <img  src="https://images.unsplash.com/photo-1571566882372-1598d88abd90?auto=format&fit=crop&w=900&q=80"
+                </a><a class="article" href="article-what-to-feed-kitten.html"><img
+                        src="https://images.unsplash.com/photo-1571566882372-1598d88abd90?auto=format&fit=crop&w=900&q=80"
                         alt="Real cat photo for What to Feed a Kitten">
                     <h4>What to Feed a Kitten</h4>
                     <p>Growing kittens need energy-dense complete kitten food, frequent meals, and fresh water every
                         day.</p>
-                </a>
-               <a class="article" href="article-introducing-kitten-to-pets.html">
-                      <img  src="https://images.unsplash.com/photo-1545249390-6bdfa286032f?auto=format&fit=crop&w=900&q=80"
+                </a><a class="article" href="article-introducing-kitten-to-pets.html"><img
+                        src="https://images.unsplash.com/photo-1545249390-6bdfa286032f?auto=format&fit=crop&w=900&q=80"
                         alt="Real cat photo for Introducing a Kitten to Pets">
                     <h4>Introducing a Kitten to Pets</h4>
                     <p>Use scent swapping, barriers, short supervised meetings, and patience to avoid overwhelming the
                         kitten.</p>
-                </a>
-            </div>
+                </a></div>
         </section>
-        <section id="" class="category">
+        <section id="indoor" class="category">
             <div class="cat-head">
                 <div class="badge">🏠</div>
                 <div>
@@ -681,36 +752,31 @@
                 </div>
                 <div class="count">4 articles</div>
             </div>
-            <div class="articles">
-                <a class="article" href="article-keep-indoor-cats-happy.html">
-                       <img src="https://images.unsplash.com/photo-1548366086-7f1b76106622?auto=format&fit=crop&w=900&q=80"
+            <div class="articles"><a class="article" href="article-keep-indoor-cats-happy.html"><img
+                        src="https://images.unsplash.com/photo-1548366086-7f1b76106622?auto=format&fit=crop&w=900&q=80"
                         alt="Real cat photo for How to Keep Indoor Cats Happy">
                     <h4>How to Keep Indoor Cats Happy</h4>
                     <p>Build a richer indoor world with climbing shelves, window views, daily play, puzzle feeders, and
                         hiding places.</p>
-               </a>
-                <a class="article" href="article-best-toys-indoor-cats.html">
-                       <img src="https://images.unsplash.com/photo-1547955922-26be0c1600c4?auto=format&fit=crop&w=900&q=80"
+                </a><a class="article" href="article-best-toys-indoor-cats.html"><img
+                        src="https://images.unsplash.com/photo-1547955922-26be0c1600c4?auto=format&fit=crop&w=900&q=80"
                         alt="Real cat photo for Best Toys for Indoor Cats">
                     <h4>Best Toys for Indoor Cats</h4>
                     <p>Choose toys that copy hunting: wand toys, balls, tunnels, kickers, and food puzzles.</p>
-                 </a>
-                <a class="article" href="article-why-cats-need-scratching-posts.html">
-                     <img   src="https://images.unsplash.com/photo-1583083527882-4bee9aba2eea?auto=format&fit=crop&w=900&q=80"
+                </a><a class="article" href="article-why-cats-need-scratching-posts.html"><img
+                        src="https://images.unsplash.com/photo-1583083527882-4bee9aba2eea?auto=format&fit=crop&w=900&q=80"
                         alt="Real cat photo for Why Cats Need Scratching Posts">
                     <h4>Why Cats Need Scratching Posts</h4>
                     <p>Scratching stretches muscles, maintains claws, relieves stress, and leaves scent marks.</p>
-                </a>
-                <a class="article" href="article-signs-cat-is-bored.html">
-                       <img src="https://images.unsplash.com/photo-1501820488136-72669149e0d4?auto=format&fit=crop&w=900&q=80"
+                </a><a class="article" href="article-signs-cat-is-bored.html"><img
+                        src="https://images.unsplash.com/photo-1501820488136-72669149e0d4?auto=format&fit=crop&w=900&q=80"
                         alt="Real cat photo for Signs Your Cat Is Bored">
                     <h4>Signs Your Cat Is Bored</h4>
                     <p>Over-sleeping, overeating, destructive scratching, attention-seeking, or night zoomies may mean
                         more enrichment is needed.</p>
-                </a>
-            </div>
+                </a></div>
         </section>
-        <section id="" class="category">
+        <section id="safety" class="category">
             <div class="cat-head">
                 <div class="badge">🌿</div>
                 <div>
@@ -719,38 +785,33 @@
                 </div>
                 <div class="count">4 articles</div>
             </div>
-            <div class="articles">
-                <a class="article" href="article-toxic-houseplants-for-cats.html">
-                      <img  src="https://images.unsplash.com/photo-1533743983669-94fa5c4338ec?auto=format&fit=crop&w=900&q=80"
+            <div class="articles"><a class="article" href="article-toxic-houseplants-for-cats.html"><img
+                        src="https://images.unsplash.com/photo-1533743983669-94fa5c4338ec?auto=format&fit=crop&w=900&q=80"
                         alt="Real cat photo for Toxic Houseplants for Cats">
                     <h4>Toxic Houseplants for Cats</h4>
                     <p>Know risky plants including lilies, pothos, philodendron, aloe, sago palm, and some cut flowers.
                     </p>
-                </a>
-                <a class="article" href="article-cat-proof-your-home.html">
-                      <img  src="https://images.unsplash.com/photo-1491485880348-85d48a9e5312?auto=format&fit=crop&w=900&q=80"
+                </a><a class="article" href="article-cat-proof-your-home.html"><img
+                        src="https://images.unsplash.com/photo-1491485880348-85d48a9e5312?auto=format&fit=crop&w=900&q=80"
                         alt="Real cat photo for How to Cat-Proof Your Home">
                     <h4>How to Cat-Proof Your Home</h4>
                     <p>Check windows, balconies, cleaning products, wires, string, small objects, hot appliances, and
                         bins.</p>
-                </a>
-               <a class="article" href="article-indoor-vs-outdoor-cats.html">
-                       <img src="https://images.unsplash.com/photo-1506755855567-92ff770e8d00?auto=format&fit=crop&w=900&q=80"
+                </a><a class="article" href="article-indoor-vs-outdoor-cats.html"><img
+                        src="https://images.unsplash.com/photo-1506755855567-92ff770e8d00?auto=format&fit=crop&w=900&q=80"
                         alt="Real cat photo for Indoor vs Outdoor Cats">
                     <h4>Indoor vs Outdoor Cats</h4>
                     <p>Compare safety, exercise, enrichment, disease risk, traffic danger, wildlife impact, and secure
                         outdoor options.</p>
-                </a>
-                <a class="article" href="article-travelling-safely-with-cats.html">
-                      <img  src="https://images.unsplash.com/photo-1570018144715-43110363d70a?auto=format&fit=crop&w=900&q=80"
+                </a><a class="article" href="article-travelling-safely-with-cats.html"><img
+                        src="https://images.unsplash.com/photo-1570018144715-43110363d70a?auto=format&fit=crop&w=900&q=80"
                         alt="Real cat photo for Travelling Safely with Cats">
                     <h4>Travelling Safely with Cats</h4>
                     <p>Use a secure carrier, familiar bedding, microchip details, calm handling, and vet advice for
                         longer trips.</p>
-                </a>
-            </div>
+                </a></div>
         </section>
-        <section id="" class="category">
+        <section id="everyday" class="category">
             <div class="cat-head">
                 <div class="badge">🧼</div>
                 <div>
@@ -759,35 +820,30 @@
                 </div>
                 <div class="count">4 articles</div>
             </div>
-            <div class="articles">
-                <a class="article" href="article-how-to-groom-a-cat.html">
-                      <img  src="https://images.unsplash.com/photo-1529778873920-4da4926a72c2?auto=format&fit=crop&w=900&q=80"
+            <div class="articles"><a class="article" href="article-how-to-groom-a-cat.html"><img
+                        src="https://images.unsplash.com/photo-1529778873920-4da4926a72c2?auto=format&fit=crop&w=900&q=80"
                         alt="Real cat photo for How to Groom a Cat">
                     <h4>How to Groom a Cat</h4>
                     <p>Brush by coat type, check for mats, keep sessions short, and reward calm behaviour.</p>
-                </a>
-                 <a class="article" href="article-best-litter-box-setup.html">
-                      <img  src="https://images.unsplash.com/photo-1513360371669-4adf3dd7dff8?auto=format&fit=crop&w=900&q=80"
+                </a><a class="article" href="article-best-litter-box-setup.html"><img
+                        src="https://images.unsplash.com/photo-1513360371669-4adf3dd7dff8?auto=format&fit=crop&w=900&q=80"
                         alt="Real cat photo for Best Litter Box Setup">
                     <h4>Best Litter Box Setup</h4>
                     <p>Use enough trays, quiet locations, suitable litter depth, and daily scooping to prevent stress.
                     </p>
-                </a>
-                <a class="article" href="article-how-to-trim-cat-nails.html">
-                      <img  src="https://images.unsplash.com/photo-1570824104453-508955ab713e?auto=format&fit=crop&w=900&q=80"
+                </a><a class="article" href="article-how-to-trim-cat-nails.html"><img
+                        src="https://images.unsplash.com/photo-1570824104453-508955ab713e?auto=format&fit=crop&w=900&q=80"
                         alt="Real cat photo for How to Trim Cat Nails">
                     <h4>How to Trim Cat Nails</h4>
                     <p>Trim only the sharp tip, avoid the quick, go slowly, and stop before your cat gets stressed.</p>
-                </a>
-               <a class="article" href="article-daily-cat-care-checklist.html">
-                      <img  src="https://images.unsplash.com/photo-1520315342629-6ea920342047?auto=format&fit=crop&w=900&q=80"
+                </a><a class="article" href="article-daily-cat-care-checklist.html"><img
+                        src="https://images.unsplash.com/photo-1520315342629-6ea920342047?auto=format&fit=crop&w=900&q=80"
                         alt="Real cat photo for Daily Cat Care Checklist">
                     <h4>Daily Cat Care Checklist</h4>
                     <p>A simple routine for feeding, water, litter, play, grooming, health checks, and affection.</p>
-                 </a>
-            </div>
+                </a></div>
         </section>
-        <section id="" class="category">
+        <section id="breeds" class="category">
             <div class="cat-head">
                 <div class="badge">🐈</div>
                 <div>
@@ -796,35 +852,30 @@
                 </div>
                 <div class="count">4 articles</div>
             </div>
-            <div class="articles">
-                  <a class="article" href="article-best-cat-breeds-for-families.html">
-                      <img  src="https://images.unsplash.com/photo-1555685812-4b943f1cb0eb?auto=format&fit=crop&w=900&q=80"
+            <div class="articles"><a class="article" href="article-best-cat-breeds-for-families.html"><img
+                        src="https://images.unsplash.com/photo-1555685812-4b943f1cb0eb?auto=format&fit=crop&w=900&q=80"
                         alt="Real cat photo for Best Cat Breeds for Families">
                     <h4>Best Cat Breeds for Families</h4>
                     <p>Learn which traits often suit family life, while remembering every cat has an individual
                         personality.</p>
-                </a>
-                 <a class="article" href="article-maine-coon-facts.html">
-                       <img src="https://images.unsplash.com/photo-1615789591457-74a63395c990?auto=format&fit=crop&w=900&q=80"
+                </a><a class="article" href="article-maine-coon-facts.html"><img
+                        src="https://images.unsplash.com/photo-1615789591457-74a63395c990?auto=format&fit=crop&w=900&q=80"
                         alt="Real cat photo for Maine Coon Facts">
                     <h4>Maine Coon Facts</h4>
                     <p>A friendly giant known for a thick coat, large body, sociable nature, and playful confidence.</p>
-                </a>
-                <a class="article" href="article-siamese-cat-facts.html">
-                       <img src="https://images.unsplash.com/photo-1513245543132-31f507417b26?auto=format&fit=crop&w=900&q=80"
+                </a><a class="article" href="article-siamese-cat-facts.html"><img
+                        src="https://images.unsplash.com/photo-1513245543132-31f507417b26?auto=format&fit=crop&w=900&q=80"
                         alt="Real cat photo for Siamese Cat Facts">
                     <h4>Siamese Cat Facts</h4>
                     <p>Vocal, social, intelligent cats with colour-point coats and strong bonds with people.</p>
-                </a>
-                <a class="article" href="article-are-cats-hypoallergenic.html">
-                       <img src="https://images.unsplash.com/photo-1596854407944-bf87f6fdd49e?auto=format&fit=crop&w=900&q=80"
+                </a><a class="article" href="article-are-cats-hypoallergenic.html"><img
+                        src="https://images.unsplash.com/photo-1596854407944-bf87f6fdd49e?auto=format&fit=crop&w=900&q=80"
                         alt="Real cat photo for Are Cats Hypoallergenic?">
                     <h4>Are Cats Hypoallergenic?</h4>
                     <p>No cat is truly allergen-free, but allergen levels and human reactions can vary.</p>
-                </a>
-            </div>
+                </a></div>
         </section>
-        <section id="" class="category">
+        <section id="fun" class="category">
             <div class="cat-head">
                 <div class="badge">✨</div>
                 <div>
@@ -833,32 +884,27 @@
                 </div>
                 <div class="count">4 articles</div>
             </div>
-            <div class="articles">
-                <a class="article" href="article-why-cats-have-whiskers.html">
-                      <img  src="https://images.unsplash.com/photo-1511694009171-3cdddf4484ff?auto=format&fit=crop&w=900&q=80"
+            <div class="articles"><a class="article" href="article-why-cats-have-whiskers.html"><img
+                        src="https://images.unsplash.com/photo-1511694009171-3cdddf4484ff?auto=format&fit=crop&w=900&q=80"
                         alt="Real cat photo for Why Cats Have Whiskers">
                     <h4>Why Cats Have Whiskers</h4>
                     <p>Whiskers help cats sense spaces, air movement, nearby objects, and body position.</p>
-                </a>
-                <a class="article" href="article-why-cat-eyes-glow.html">
-                      <img  src="https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?auto=format&fit=crop&w=900&q=80"
+                </a><a class="article" href="article-why-cat-eyes-glow.html"><img
+                        src="https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?auto=format&fit=crop&w=900&q=80"
                         alt="Real cat photo for Why Cat Eyes Glow">
                     <h4>Why Cat Eyes Glow</h4>
                     <p>A reflective layer called the tapetum lucidum helps cats use low light more efficiently.</p>
-                </a>
-                 <a class="article" href="article-do-cats-know-their-names.html">
-                      <img  src="https://images.unsplash.com/photo-1518791841217-8f162f1e1131?auto=format&fit=crop&w=900&q=80"
+                </a><a class="article" href="article-do-cats-know-their-names.html"><img
+                        src="https://images.unsplash.com/photo-1518791841217-8f162f1e1131?auto=format&fit=crop&w=900&q=80"
                         alt="Real cat photo for Do Cats Know Their Names?">
                     <h4>Do Cats Know Their Names?</h4>
                     <p>Research suggests many cats can recognise their names, even if they do not always respond.</p>
-                </a>
-               <a class="article" href="article-why-cats-land-on-their-feet.html">
-                       <img src="https://images.unsplash.com/photo-1511275539165-cc46b1ee89bf?auto=format&fit=crop&w=900&q=80"
+                </a><a class="article" href="article-why-cats-land-on-their-feet.html"><img
+                        src="https://images.unsplash.com/photo-1511275539165-cc46b1ee89bf?auto=format&fit=crop&w=900&q=80"
                         alt="Real cat photo for Why Cats Land on Their Feet">
                     <h4>Why Cats Land on Their Feet</h4>
                     <p>The righting reflex helps cats rotate in the air, but falls can still cause serious injuries.</p>
-                </a>
-            </div>
+                </a></div>
         </section>
         <section id="az" class="az">
             <h2>Browse A–Z</h2>
@@ -871,6 +917,7 @@
     </main>
     <footer class="footer">© 2026 Cat&amp;Me. Educational cat-care content only — contact a qualified vet for medical
         concerns.</footer>
+    <script>(function () { var input = document.getElementById('searchInput'); var btn = document.getElementById('searchBtn'); var box = document.getElementById('searchResults'); if (!input || !box) { return; } function esc(s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); } var cards = [].slice.call(document.querySelectorAll('.articles a.article')).map(function (a) { var sec = a.closest('.category'); var catEl = sec ? sec.querySelector('.cat-head h3') : null; var img = a.querySelector('img'); var h = a.querySelector('h4'); var p = a.querySelector('p'); return { href: a.getAttribute('href'), title: h ? h.textContent : '', desc: p ? p.textContent : '', cat: catEl ? catEl.textContent : '', img: img ? img.getAttribute('src') : '' }; }); function render(q) { q = (q || '').trim(); if (!q) { box.hidden = true; box.innerHTML = ''; return; } var ql = q.toLowerCase(); var matches = cards.filter(function (c) { return (c.title + ' ' + c.desc + ' ' + c.cat).toLowerCase().indexOf(ql) !== -1; }); var html = ''; if (!matches.length) { html = '<div class="sr-empty">No articles found for “' + esc(q) + '”. Try a different keyword.</div>'; } else { html = '<div class="sr-head">' + matches.length + ' result' + (matches.length > 1 ? 's' : '') + ' for “' + esc(q) + '”</div>'; matches.forEach(function (c) { html += '<a class="sr-item" href="' + c.href + '">' + (c.img ? '<img src="' + c.img + '" alt="">' : '') + '<span><span class="sr-cat">' + esc(c.cat) + '</span><p class="sr-title">' + esc(c.title) + '</p><p class="sr-desc">' + esc(c.desc) + '</p></span></a>'; }); } box.innerHTML = html; box.hidden = false; } input.addEventListener('input', function () { render(input.value); }); btn.addEventListener('click', function () { render(input.value); input.focus(); }); input.addEventListener('keydown', function (e) { if (e.key === 'Enter') { e.preventDefault(); render(input.value); } }); document.addEventListener('click', function (e) { if (!e.target.closest('.search-wrap')) { box.hidden = true; } }); })();</script>
 </body>
 
 </html>
